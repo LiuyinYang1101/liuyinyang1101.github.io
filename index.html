@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yin Liu — Researcher</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <span class="nav-name">Yin Liu</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO / ABOUT ===== -->
+  <section class="hero" id="about">
+    <div class="hero-inner">
+      <div class="hero-photo">
+        <img src="assets/photo.jpg" alt="Yin Liu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+        <div class="photo-placeholder" style="display:none">YL</div>
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-name">Yin Liu</h1>
+        <p class="hero-title">PhD Researcher · KU Leuven</p>
+        <p class="hero-tagline">
+          I work at the intersection of <em>neural signal processing</em>,
+          <em>brain–computer interfaces</em>, and <em>deep learning</em>.
+          My goal is to decode the language of the brain — translating
+          neural dynamics into actionable representations for clinical and
+          scientific use.
+        </p>
+        <div class="hero-badges">
+          <span class="badge">ECoG</span>
+          <span class="badge">EEG</span>
+          <span class="badge">BCI</span>
+          <span class="badge">Foundation Models</span>
+          <span class="badge">Self-supervised Learning</span>
+        </div>
+        <p class="hero-contact">
+          <a href="mailto:qq897158754@gmail.com">qq897158754@gmail.com</a>
+          &nbsp;·&nbsp;
+          KU Leuven, Belgium
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CV ===== -->
+  <section class="section" id="cv">
+    <div class="section-inner">
+      <h2 class="section-title">Curriculum Vitae</h2>
+
+      <div class="cv-grid">
+        <!-- Education -->
+        <div class="cv-block">
+          <h3 class="cv-block-title">Education</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="tl-year">2022 – present</span>
+              <div class="tl-body">
+                <strong>PhD in Electrical Engineering</strong>
+                <span class="tl-inst">KU Leuven, Belgium</span>
+                <p>Thesis: Neural signal decoding with self-supervised foundation models</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2019 – 2022</span>
+              <div class="tl-body">
+                <strong>MSc in Biomedical Engineering</strong>
+                <span class="tl-inst">Your University</span>
+                <p>Graduated with distinction</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2015 – 2019</span>
+              <div class="tl-body">
+                <strong>BEng in Electrical Engineering</strong>
+                <span class="tl-inst">Your University</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="cv-block">
+          <h3 class="cv-block-title">Research Experience</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="tl-year">2022 – present</span>
+              <div class="tl-body">
+                <strong>PhD Researcher</strong>
+                <span class="tl-inst">KU Leuven — ESAT/STADIUS</span>
+                <p>Neural decoding, ECoG/EEG foundation models, BCI systems</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2021 – 2022</span>
+              <div class="tl-body">
+                <strong>Research Intern</strong>
+                <span class="tl-inst">Your Lab / Company</span>
+                <p>Topic: ...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="cv-block cv-block--skills">
+          <h3 class="cv-block-title">Skills &amp; Tools</h3>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <span class="skill-label">Languages</span>
+              <div class="skill-tags">
+                <span class="tag">Python</span><span class="tag">MATLAB</span><span class="tag">C++</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <span class="skill-label">Frameworks</span>
+              <div class="skill-tags">
+                <span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">MNE</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <span class="skill-label">Methods</span>
+              <div class="skill-tags">
+                <span class="tag">Self-supervised Learning</span>
+                <span class="tag">Transformers</span>
+                <span class="tag">Time-series Analysis</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <span class="skill-label">Infrastructure</span>
+              <div class="skill-tags">
+                <span class="tag">Linux</span><span class="tag">HPC / SLURM</span><span class="tag">Git</span><span class="tag">Docker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CV download -->
+        <div class="cv-download">
+          <a href="assets/cv.pdf" class="btn btn--primary" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Full CV (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICATIONS ===== -->
+  <section class="section section--alt" id="publications">
+    <div class="section-inner">
+      <h2 class="section-title">Publications</h2>
+
+      <div class="pub-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="journal">Journals</button>
+        <button class="filter-btn" data-filter="conference">Conferences</button>
+        <button class="filter-btn" data-filter="preprint">Preprints</button>
+      </div>
+
+      <ol class="pub-list" reversed>
+
+        <li class="pub-item" data-type="conference">
+          <div class="pub-meta">
+            <span class="pub-type conference">Conference</span>
+            <span class="pub-year">2024</span>
+          </div>
+          <p class="pub-title">
+            Your Paper Title Here: Self-supervised Pre-training for ECoG Decoding
+          </p>
+          <p class="pub-authors">
+            <strong>Yin Liu</strong>, Co-author A, Co-author B, Supervisor Name
+          </p>
+          <p class="pub-venue">NeurIPS 2024 · New Orleans, USA</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">PDF</a>
+            <a href="#" class="pub-link">arXiv</a>
+            <a href="#" class="pub-link">Code</a>
+            <a href="#" class="pub-link">Poster</a>
+          </div>
+        </li>
+
+        <li class="pub-item" data-type="journal">
+          <div class="pub-meta">
+            <span class="pub-type journal">Journal</span>
+            <span class="pub-year">2023</span>
+          </div>
+          <p class="pub-title">
+            Another Paper Title: Foundation Models for Neural Signals
+          </p>
+          <p class="pub-authors">
+            <strong>Yin Liu</strong>, Co-author C, Supervisor Name
+          </p>
+          <p class="pub-venue"><em>Journal of Neural Engineering</em>, vol. XX, 2023</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">PDF</a>
+            <a href="#" class="pub-link">DOI</a>
+          </div>
+        </li>
+
+        <li class="pub-item" data-type="preprint">
+          <div class="pub-meta">
+            <span class="pub-type preprint">Preprint</span>
+            <span class="pub-year">2025</span>
+          </div>
+          <p class="pub-title">
+            Preprint Title: Cross-dataset Transfer in EEG Foundation Models
+          </p>
+          <p class="pub-authors">
+            <strong>Yin Liu</strong>, Co-author D, Co-author E
+          </p>
+          <p class="pub-venue">arXiv 2025</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">arXiv</a>
+            <a href="#" class="pub-link">Code</a>
+          </div>
+        </li>
+
+      </ol>
+
+      <p class="pub-note">
+        * = equal contribution. For a complete list see
+        <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS ===== -->
+  <section class="section" id="awards">
+    <div class="section-inner">
+      <h2 class="section-title">Awards &amp; Honors</h2>
+
+      <div class="awards-list">
+
+        <div class="award-item">
+          <div class="award-icon">🏆</div>
+          <div class="award-body">
+            <strong class="award-name">Best Paper Award</strong>
+            <span class="award-year">2024</span>
+            <p class="award-desc">Conference / Workshop name — Paper title</p>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-icon">🎓</div>
+          <div class="award-body">
+            <strong class="award-name">PhD Fellowship</strong>
+            <span class="award-year">2022</span>
+            <p class="award-desc">Funded by FWO (Research Foundation – Flanders) / Your funding body</p>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-icon">🥇</div>
+          <div class="award-body">
+            <strong class="award-name">Outstanding Graduate</strong>
+            <span class="award-year">2022</span>
+            <p class="award-desc">Your University — MSc program</p>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-icon">🌟</div>
+          <div class="award-body">
+            <strong class="award-name">National Scholarship</strong>
+            <span class="award-year">2018</span>
+            <p class="award-desc">Ministry of Education, China</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LINKS ===== -->
+  <section class="section section--alt" id="links">
+    <div class="section-inner">
+      <h2 class="section-title">Find Me</h2>
+      <div class="links-grid">
+
+        <a class="link-card" href="https://github.com/yourusername" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          <span class="link-label">GitHub</span>
+          <span class="link-handle">@yourusername</span>
+        </a>
+
+        <a class="link-card" href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+          <span class="link-label">Google Scholar</span>
+          <span class="link-handle">Yin Liu</span>
+        </a>
+
+        <a class="link-card" href="https://www.semanticscholar.org/author/YOURID" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path fill="white" d="M8 12l3 3 5-5"/></svg>
+          <span class="link-label">Semantic Scholar</span>
+          <span class="link-handle">Profile</span>
+        </a>
+
+        <a class="link-card" href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.374 5.324h2.748v1.627h-2.748zm0 3.09h2.748V18.75h-2.748z"/></svg>
+          <span class="link-label">ORCID</span>
+          <span class="link-handle">0000-0000-0000-0000</span>
+        </a>
+
+        <a class="link-card" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span class="link-label">LinkedIn</span>
+          <span class="link-handle">Yin Liu</span>
+        </a>
+
+        <a class="link-card" href="https://twitter.com/yourhandle" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span class="link-label">X / Twitter</span>
+          <span class="link-handle">@yourhandle</span>
+        </a>
+
+        <a class="link-card" href="https://researchgate.net/profile/yourprofile" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.195 12.195 0 0 0-.36 2.437c-.015.438-.018.712-.018.818v.83c0 .07.03.13.093.177.063.047.135.047.21 0l.643-.55c.28-.24.458-.44.546-.6.088-.16.132-.328.132-.503v-.813c0-.25.022-.51.063-.78.04-.27.1-.51.18-.723.08-.212.186-.39.316-.536.13-.144.292-.217.486-.217h.27c.18 0 .36.1.54.3.178.2.268.46.268.78v.93c0 .27-.06.52-.18.753-.12.232-.3.44-.54.624L12.5 9.85c-.24.18-.41.354-.51.522-.1.17-.15.34-.15.51v.375c0 .058.016.105.047.14.03.035.07.053.117.053h.375c.047 0 .087-.018.12-.053.032-.035.048-.082.048-.14v-.375c0-.093.04-.18.12-.26.08-.08.17-.15.27-.21l5.44-4.17c.27-.215.48-.465.63-.75.15-.284.225-.597.225-.938v-.93C19.232.79 18.9.44 18.43.15 17.957-.14 17.376 0 16.688 0h-.105C14.77 0 13.697.746 13.42 2.238c-.048.277-.072.625-.072 1.044v.66h-.345v-.66c0-.42-.024-.767-.072-1.044C12.655.746 11.582 0 9.77 0h-.105C9.074 0 8.493-.14 8.02.15c-.47.29-.802.64-.8 1.15v.93c0 .34.076.654.225.938.15.285.36.535.63.75l5.44 4.17c.1.06.19.13.27.21.08.08.12.167.12.26v.375c0 .058.016.105.047.14.03.035.07.053.118.053h.375c.046 0 .086-.018.12-.053.03-.035.047-.082.047-.14v-.375c0-.17-.05-.34-.15-.51-.1-.168-.27-.342-.51-.522l-5.44-4.17c-.24-.183-.42-.392-.54-.624-.12-.232-.18-.482-.18-.753v-.93c0-.32.09-.58.27-.78.178-.2.358-.3.54-.3h.27c.193 0 .356.073.487.217.13.145.235.324.315.536.08.213.14.454.18.723.04.27.062.53.062.78v.813c0 .175.044.342.132.503.088.16.265.36.546.6l.643.55c.075.047.147.047.21 0 .063-.047.093-.107.093-.177v-.83c0-.106-.003-.38-.018-.818a12.195 12.195 0 0 0-.36-2.437C17.46 1.5 17.052.94 16.49.565 15.926.19 15.236 0 14.418 0zM12 14.4c-4.196 0-7.6 3.403-7.6 7.6S7.804 29.6 12 29.6s7.6-3.403 7.6-7.6S16.196 14.4 12 14.4z"/></svg>
+          <span class="link-label">ResearchGate</span>
+          <span class="link-handle">Profile</span>
+        </a>
+
+        <a class="link-card" href="https://www.esat.kuleuven.be/stadius" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="link-label">Lab Page</span>
+          <span class="link-handle">ESAT/STADIUS</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2026 Yin Liu &nbsp;·&nbsp; Built with plain HTML/CSS &nbsp;·&nbsp; Hosted on GitHub Pages</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
