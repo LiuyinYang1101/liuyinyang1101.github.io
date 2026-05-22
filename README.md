@@ -8,9 +8,9 @@ A clean, responsive personal academic profile page designed for GitHub Pages.
 |---------|-------------|
 | **About / Intro** | Photo, title, research interests, contact |
 | **CV** | Education, experience, skills, PDF download |
-| **Publications** | Filterable list (journals / conferences / preprints) |
+| **Projects** | Filterable list of research projects (BCI / Foundation Models / Signal Processing) |
 | **Awards** | Honors and scholarships |
-| **Links** | GitHub, Scholar, ORCID, LinkedIn, X, ResearchGate, Lab |
+| **Links** | Email, Scholar, GitHub, LinkedIn, ORCID, Lab |
 
 ## How to Run Locally
 
@@ -35,7 +35,7 @@ python3 -m http.server 8000
 | Photo | Replace `assets/photo.jpg` (150×150 px recommended) |
 | CV PDF | Place your CV at `assets/cv.pdf` |
 | Education / experience | `index.html` → `#cv` section |
-| Publications | `index.html` → `#publications` — copy/paste `<li class="pub-item">` blocks |
+| Projects | `index.html` → `#projects` — copy/paste `<li class="pub-item">` blocks |
 | Awards | `index.html` → `#awards` section |
 | Social links | `index.html` → `#links` section — update `href` and handle text |
 | Colors / fonts | `style.css` → `:root` CSS custom properties |

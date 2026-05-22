@@ -5,3 +5,6 @@ node_modules/
 .env
 dist/
 build/
+
+# Source headshot — only the web-optimized copy ships
+assets/profile.jpeg
