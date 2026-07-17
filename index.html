@@ -3,33 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liuyin Yang — Computational Neuroscience, KU Leuven</title>
-  <meta name="description" content="PhD researcher in EEG-based brain–computer interfaces, foundation models for neural signals, and real-time BCI systems at the Computational Neuroscience Group, KU Leuven." />
-  <meta name="theme-color" content="#fbfbfd" />
+  <title>Liuyin Yang — EEG Foundation Models &amp; Brain–Computer Interfaces, KU Leuven</title>
+  <meta name="description" content="PhD researcher building EEG foundation models for brain–computer interfaces at the Computational Neuroscience Group, KU Leuven — cross-modality transfer from scalp EEG to intracranial recordings, auditory and motor decoding, and real-time BCI systems." />
   <meta name="author" content="Liuyin Yang" />
+
+  <!-- theme-color adapts to light / dark -->
+  <meta name="theme-color" content="#fafafc" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0b10" media="(prefers-color-scheme: dark)" />
 
   <!-- Open Graph / link previews -->
   <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://liuyinyang1101.github.io/" />
   <meta property="og:title" content="Liuyin Yang — PhD Researcher, KU Leuven" />
-  <meta property="og:description" content="EEG-based brain–computer interfaces, foundation models for neural signals, and real-time BCI systems." />
-  <meta property="og:image" content="assets/profile-web.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:description" content="EEG foundation models, cross-modality scalp-to-intracranial transfer, and real-time brain–computer interfaces." />
+  <meta property="og:image" content="https://liuyinyang1101.github.io/assets/profile-web.jpg" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Liuyin Yang — PhD Researcher, KU Leuven" />
-  <meta name="twitter:description" content="EEG-based brain–computer interfaces, foundation models for neural signals, and real-time BCI systems." />
-  <meta name="twitter:image" content="assets/profile-web.jpg" />
+  <meta name="twitter:description" content="EEG foundation models, cross-modality scalp-to-intracranial transfer, and real-time brain–computer interfaces." />
+  <meta name="twitter:image" content="https://liuyinyang1101.github.io/assets/profile-web.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Set theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var dark = saved ? saved === "dark"
+          : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- ===== NAV ===== -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#about" class="nav-name">Liuyin Yang</a>
+      <a href="#about" class="nav-name">Liuyin&nbsp;Yang</a>
       <ul class="nav-links">
         <li><a href="#cv">CV</a></li>
         <li><a href="#publications">Publications</a></li>
@@ -37,31 +55,53 @@
         <li><a href="#awards">Awards</a></li>
         <li><a href="#connect">Contact</a></li>
       </ul>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <path d="M12 2.4v2.4M12 19.2v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 14.2A8 8 0 0 1 9.8 4 8 8 0 1 0 20 14.2Z"></path>
+        </svg>
+      </button>
     </div>
   </nav>
 
-  <main>
+  <main id="main" tabindex="-1">
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="about">
+    <div class="hero-signal" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="photo">
         <img src="assets/profile-web.jpg" alt="Liuyin Yang" width="264" height="264" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
         <div class="photo-fallback">LY</div>
       </div>
+      <p class="hero-eyebrow">PhD Researcher · Computational Neuroscience · KU Leuven</p>
       <h1 class="hero-name">Liuyin Yang</h1>
-      <p class="hero-subtitle">PhD Researcher · <a href="https://gbiomed.kuleuven.be/english/research/50000666/50000669/50488669/neuro_research/neuro_research_mvanhulle" target="_blank" rel="noopener">Computational Neuroscience Group</a>, KU Leuven</p>
       <p class="hero-tagline">
-        My research focuses on EEG-based brain–computer interfaces &mdash; foundation models
-        for neural signals, auditory decoding, and real-time BCI systems.
+        I build <strong>EEG foundation models</strong> for brain–computer interfaces — teaching
+        large models pretrained on scalp EEG to transfer into <strong>intracranial recordings</strong>,
+        and turning neural signals into real-time control, auditory, and motor decoding.
       </p>
-      <a href="mailto:liuyin.yang@kuleuven.be" class="btn-primary">Get in touch</a>
+      <ul class="hero-tags">
+        <li>EEG Foundation Models</li>
+        <li>Brain–Computer Interfaces</li>
+        <li>Scalp → Intracranial Transfer</li>
+        <li>Auditory &amp; Motor Decoding</li>
+        <li>Real-time BCI</li>
+      </ul>
+      <div class="hero-actions">
+        <a href="mailto:liuyin.yang@kuleuven.be" class="btn-primary">Get in touch</a>
+        <a href="#publications" class="btn-ghost">Read the work <span aria-hidden="true">↓</span></a>
+      </div>
     </div>
   </section>
 
   <!-- ===== CV ===== -->
   <section class="section" id="cv">
     <div class="section-inner">
+      <p class="section-kicker">Background</p>
       <h2 class="section-title">Curriculum Vitae</h2>
 
       <div class="cv-grid">
@@ -69,7 +109,7 @@
           <h3 class="cv-block-title">Education</h3>
           <ol class="timeline">
             <li class="timeline-item">
-              <div class="tl-year">2021 — present</div>
+              <div class="tl-year">2021 — now</div>
               <div class="tl-body">
                 <div class="tl-role">PhD, Biomedical Sciences (Medicine)</div>
                 <div class="tl-inst">KU Leuven · Leuven, Belgium</div>
@@ -77,35 +117,34 @@
               </div>
             </li>
             <li class="timeline-item">
-              <div class="tl-year">2020 — 2021</div>
+              <div class="tl-year">2020 — 21</div>
               <div class="tl-body">
                 <div class="tl-role">Advanced Master, Artificial Intelligence</div>
                 <div class="tl-inst">KU Leuven · Big Data Analytics</div>
-                <div class="tl-note">Cum laude · 75.33%</div>
+                <div class="tl-note">Cum laude</div>
               </div>
             </li>
             <li class="timeline-item">
-              <div class="tl-year">2019 — 2020</div>
+              <div class="tl-year">2019 — 20</div>
               <div class="tl-body">
                 <div class="tl-role">MSc, Electronics &amp; ICT Engineering</div>
                 <div class="tl-inst">KU Leuven · Engineering Technology</div>
-                <div class="tl-note">Cum laude · 73.85%</div>
+                <div class="tl-note">Cum laude</div>
               </div>
             </li>
             <li class="timeline-item">
-              <div class="tl-year">2017 — 2019</div>
+              <div class="tl-year">2017 — 19</div>
               <div class="tl-body">
                 <div class="tl-role">BSc, Electronics Engineering</div>
                 <div class="tl-inst">KU Leuven</div>
-                <div class="tl-note">Cum laude · 72.58%</div>
+                <div class="tl-note">Cum laude</div>
               </div>
             </li>
             <li class="timeline-item">
-              <div class="tl-year">2015 — 2017</div>
+              <div class="tl-year">2015 — 17</div>
               <div class="tl-body">
                 <div class="tl-role">BEng, Electrical Engineering &amp; Automation</div>
                 <div class="tl-inst">Chongqing University · China</div>
-                <div class="tl-note">GPA 3.3 / 4.0</div>
               </div>
             </li>
           </ol>
@@ -115,15 +154,15 @@
           <h3 class="cv-block-title">Research Experience</h3>
           <ol class="timeline">
             <li class="timeline-item">
-              <div class="tl-year">2021 — present</div>
+              <div class="tl-year">2021 — now</div>
               <div class="tl-body">
                 <div class="tl-role">PhD Researcher</div>
                 <div class="tl-inst">Computational Neuroscience Group, KU Leuven</div>
-                <div class="tl-note">EEG foundation models for BCI; auditory decoding (ICASSP 2023 — 2nd place); winner of the EEG Foundation Challenge at NeurIPS 2025; online motor-imagery BCI systems.</div>
+                <div class="tl-note">EEG foundation models for BCI; cross-modality scalp-to-intracranial transfer; auditory decoding (ICASSP 2023 — 2nd place); winner of the EEG Foundation Challenge at NeurIPS 2025; online motor-imagery BCI systems.</div>
               </div>
             </li>
             <li class="timeline-item">
-              <div class="tl-year">2019 — 2020</div>
+              <div class="tl-year">2019 — 20</div>
               <div class="tl-body">
                 <div class="tl-role">Master's Thesis Researcher</div>
                 <div class="tl-inst">KU Leuven · Engineering Technology</div>
@@ -149,7 +188,7 @@
             <div class="skill-list"><span>Vivado (FPGA)</span><span>DSP Board (C5515 eZdsp)</span><span>Arduino</span><span>Eagle (PCB)</span><span>Microcontrollers</span></div>
 
             <div class="skill-cat">Languages</div>
-            <div class="skill-list"><span>English — proficient</span><span>中文 — proficient</span><span>Français — intermediate</span></div>
+            <div class="skill-list"><span>English — proficient</span><span><span lang="zh">中文</span> — proficient</span><span><span lang="fr">Français</span> — intermediate</span></div>
           </div>
         </div>
       </div>
@@ -163,40 +202,59 @@
   <!-- ===== PUBLICATIONS ===== -->
   <section class="section section--alt" id="publications">
     <div class="section-inner">
+      <p class="section-kicker">14 papers · 88 citations</p>
       <h2 class="section-title">Publications</h2>
 
-      <div class="stats">
-        <div class="stat">
-          <span class="stat-num">76</span>
+      <div class="stats" role="list">
+        <div class="stat" role="listitem">
+          <span class="stat-num">88</span>
           <span class="stat-label">Citations</span>
         </div>
-        <div class="stat">
-          <span class="stat-num">5</span>
+        <div class="stat" role="listitem">
+          <span class="stat-num">6</span>
           <span class="stat-label">h-index</span>
         </div>
-        <div class="stat">
+        <div class="stat" role="listitem">
           <span class="stat-num">4</span>
           <span class="stat-label">i10-index</span>
         </div>
-        <div class="stat">
-          <span class="stat-num">12</span>
+        <div class="stat" role="listitem">
+          <span class="stat-num">14</span>
           <span class="stat-label">Publications</span>
         </div>
       </div>
       <p class="stats-foot">
-        Source: <a href="https://scholar.google.com/citations?hl=en&amp;user=GLgF-JMAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        As of July 2026 · Source: <a href="https://scholar.google.com/citations?hl=en&amp;user=GLgF-JMAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
       </p>
+
+      <div class="filters" role="group" aria-label="Filter publications by type">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="journal" aria-pressed="false">Journal</button>
+        <button class="filter-btn" data-filter="conference" aria-pressed="false">Conference</button>
+        <button class="filter-btn" data-filter="preprint" aria-pressed="false">Preprint</button>
+        <button class="filter-btn" data-filter="workshop" aria-pressed="false">Workshop</button>
+        <button class="filter-btn" data-filter="dataset" aria-pressed="false">Dataset</button>
+      </div>
 
       <ol class="items">
 
-        <li class="item pub">
+        <li class="item item--featured" data-type="preprint">
           <div class="item-year">2026</div>
           <div class="item-body">
+            <p class="item-flag">Latest preprint</p>
             <h3 class="item-title">CORTEG: Foundation Models Enable Cross-Modality Representation Transfer from Scalp to Intracranial Brain Recordings</h3>
             <p class="item-authors"><strong>L Yang</strong>, Q Sun, B Van Dyck, EC Merino, MM Van Hulle</p>
-            <p class="item-venue">arXiv preprint · arXiv:2605.10337</p>
+            <p class="item-desc">
+              Can a large model pretrained on scalp EEG be adapted to <strong>intracranial (ECoG)</strong> recordings?
+              CORTEG bridges the two with an electrode-aware spatial adapter and a dual-stream tokenizer for
+              low-frequency and high-gamma activity, then calibrates to a held-out patient in minutes — matching
+              or beating task-specific baselines on finger-trajectory and audio-envelope regression.
+            </p>
+            <p class="item-venue">arXiv preprint · <span class="mono">arXiv:2605.10337</span></p>
             <div class="item-foot">
-              <a href="https://arxiv.org/abs/2605.10337" target="_blank" rel="noopener" class="item-link">arXiv →</a>
+              <span class="item-cites">1 citation</span>
+              <a href="https://arxiv.org/abs/2605.10337" target="_blank" rel="noopener" class="item-link">arXiv <span aria-hidden="true">→</span></a>
+              <a href="https://github.com/LiuyinYang1101/CORTEG" target="_blank" rel="noopener" class="item-link">Code <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -204,15 +262,15 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="conference">
           <div class="item-year">2026</div>
           <div class="item-body">
             <h3 class="item-title">Are EEG Foundation Models Worth It? Comparative Evaluation with Traditional Decoders in Diverse BCI Tasks</h3>
             <p class="item-authors"><strong>L Yang</strong>, Q Sun, A Li, MM Van Hulle</p>
             <p class="item-venue">International Conference on Learning Representations (ICLR)</p>
             <div class="item-foot">
-              <span class="item-cites">7 citations</span>
-              <a href="https://scholar.google.com/scholar?q=Are+EEG+foundation+models+worth+it+comparative+evaluation+traditional+decoders+BCI" target="_blank" rel="noopener" class="item-link">Scholar →</a>
+              <span class="item-cites">9 citations</span>
+              <a href="https://scholar.google.com/scholar?q=Are+EEG+foundation+models+worth+it+comparative+evaluation+traditional+decoders+BCI" target="_blank" rel="noopener" class="item-link">Scholar <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -220,7 +278,22 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="preprint">
+          <div class="item-year">2026</div>
+          <div class="item-body">
+            <h3 class="item-title">Characterization of Speech Imagery in Scalp EEG and Comparison with Motor Imagery</h3>
+            <p class="item-authors">B Van Dyck, <strong>L Yang</strong>, Q Sun, A Li, MM Van Hulle</p>
+            <p class="item-venue">arXiv preprint · <span class="mono">arXiv:2606.12223</span></p>
+            <div class="item-foot">
+              <a href="https://arxiv.org/abs/2606.12223" target="_blank" rel="noopener" class="item-link">arXiv <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="item-meta-right">
+            <span class="item-tag" data-kind="preprint">Preprint</span>
+          </div>
+        </li>
+
+        <li class="item" data-type="workshop">
           <div class="item-year">2026</div>
           <div class="item-body">
             <h3 class="item-title">Large EEG Foundation Model Learns Informative Low-Frequency Representations from Intracranial Brain Signals</h3>
@@ -228,7 +301,7 @@
             <p class="item-venue">1st ICLR Workshop on Time Series in the Age of Large Models</p>
             <div class="item-foot">
               <span class="item-cites">1 citation</span>
-              <a href="https://scholar.google.com/scholar?q=Large+EEG+Foundation+Model+Learns+Informative+Low-Frequency+Intracranial+Brain" target="_blank" rel="noopener" class="item-link">Scholar →</a>
+              <a href="https://scholar.google.com/scholar?q=Large+EEG+Foundation+Model+Learns+Informative+Low-Frequency+Intracranial+Brain" target="_blank" rel="noopener" class="item-link">Scholar <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -236,14 +309,14 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="workshop">
           <div class="item-year">2026</div>
           <div class="item-body">
             <h3 class="item-title">Do We Need Domain-Specific Time-Series Models? Insights from EEG Classification Benchmarks</h3>
             <p class="item-authors"><strong>L Yang</strong>, Q Sun, MM Van Hulle</p>
             <p class="item-venue">1st ICLR Workshop on Time Series in the Age of Large Models</p>
             <div class="item-foot">
-              <a href="https://scholar.google.com/scholar?q=Do+We+Need+Domain-Specific+Time-Series+Models+EEG+Classification+Benchmarks" target="_blank" rel="noopener" class="item-link">Scholar →</a>
+              <a href="https://scholar.google.com/scholar?q=Do+We+Need+Domain-Specific+Time-Series+Models+EEG+Classification+Benchmarks" target="_blank" rel="noopener" class="item-link">Scholar <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -251,15 +324,30 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="dataset">
+          <div class="item-year">2026</div>
+          <div class="item-body">
+            <h3 class="item-title">A Multi-Paradigm EEG Dataset for Multi-Task BCI Applications</h3>
+            <p class="item-authors"><strong>L Yang</strong>, B Van Dyck, Q Sun, A Li, MM Van Hulle</p>
+            <p class="item-venue">KU Leuven Research Data Repository · <span class="mono">doi:10.48804/3EUSTS</span></p>
+            <div class="item-foot">
+              <a href="https://doi.org/10.48804/3EUSTS" target="_blank" rel="noopener" class="item-link">Dataset <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="item-meta-right">
+            <span class="item-tag" data-kind="dataset">Dataset</span>
+          </div>
+        </li>
+
+        <li class="item" data-type="preprint">
           <div class="item-year">2025</div>
           <div class="item-body">
             <h3 class="item-title">CoMET: A Contrastive-Masked Brain Foundation Model for Universal EEG Representation</h3>
             <p class="item-authors">A Li, Z Wang, <strong>L Yang</strong>, Z Wang, T Xu, H Hu, MM Van Hulle</p>
-            <p class="item-venue">arXiv preprint · arXiv:2509.00314</p>
+            <p class="item-venue">arXiv preprint · <span class="mono">arXiv:2509.00314</span></p>
             <div class="item-foot">
-              <span class="item-cites">3 citations</span>
-              <a href="https://arxiv.org/abs/2509.00314" target="_blank" rel="noopener" class="item-link">arXiv →</a>
+              <span class="item-cites">7 citations</span>
+              <a href="https://arxiv.org/abs/2509.00314" target="_blank" rel="noopener" class="item-link">arXiv <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -267,14 +355,14 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="conference">
           <div class="item-year">2025</div>
           <div class="item-body">
             <h3 class="item-title">On the Impact of Proprioception in EEG Representations and Decoding during Human-Hand Exoskeleton Interaction</h3>
             <p class="item-authors">Q Sun, EC Merino, <strong>L Yang</strong>, A Faes, MM Van Hulle</p>
             <p class="item-venue">International Conference on Rehabilitation Robotics (ICORR)</p>
             <div class="item-foot">
-              <a href="https://doi.org/10.1109/icorr66766.2025.11063039" target="_blank" rel="noopener" class="item-link">DOI →</a>
+              <a href="https://doi.org/10.1109/icorr66766.2025.11063039" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -282,15 +370,15 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="journal">
           <div class="item-year">2024</div>
           <div class="item-body">
             <h3 class="item-title">Unraveling EEG Correlates of Unimanual Finger Movements: Insights from Non-Repetitive Flexion and Extension Tasks</h3>
             <p class="item-authors">Q Sun, EC Merino, <strong>L Yang</strong>, MM Van Hulle</p>
             <p class="item-venue">Journal of NeuroEngineering and Rehabilitation</p>
             <div class="item-foot">
-              <span class="item-cites">17 citations</span>
-              <a href="https://doi.org/10.1186/s12984-024-01533-4" target="_blank" rel="noopener" class="item-link">DOI →</a>
+              <span class="item-cites">19 citations</span>
+              <a href="https://doi.org/10.1186/s12984-024-01533-4" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -298,15 +386,15 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="journal">
           <div class="item-year">2024</div>
           <div class="item-body">
             <h3 class="item-title">Binocularly Incongruent, Multifrequency-Coded SSVEP in VR: Feasibility and Characteristics</h3>
             <p class="item-authors"><strong>L Yang</strong>, Q Sun, MM Van Hulle</p>
             <p class="item-venue">Journal of Neural Engineering</p>
             <div class="item-foot">
-              <span class="item-cites">4 citations</span>
-              <a href="https://doi.org/10.1088/1741-2552/ad775f" target="_blank" rel="noopener" class="item-link">DOI →</a>
+              <span class="item-cites">5 citations</span>
+              <a href="https://doi.org/10.1088/1741-2552/ad775f" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -314,7 +402,7 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="journal">
           <div class="item-year">2024</div>
           <div class="item-body">
             <h3 class="item-title">Sea-Wave: Speech Envelope Reconstruction from Auditory EEG with an Adapted WaveNet</h3>
@@ -322,7 +410,7 @@
             <p class="item-venue">IEEE Open Journal of Signal Processing</p>
             <div class="item-foot">
               <span class="item-cites">3 citations</span>
-              <a href="https://doi.org/10.1109/ojsp.2024.3378594" target="_blank" rel="noopener" class="item-link">DOI →</a>
+              <a href="https://doi.org/10.1109/ojsp.2024.3378594" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -330,7 +418,7 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="conference">
           <div class="item-year">2023</div>
           <div class="item-body">
             <h3 class="item-title">Decoding Auditory EEG Responses Using an Adapted WaveNet</h3>
@@ -338,7 +426,7 @@
             <p class="item-venue">IEEE ICASSP 2023 — 2nd place, Auditory EEG Grand Challenge</p>
             <div class="item-foot">
               <span class="item-cites">15 citations</span>
-              <a href="https://doi.org/10.1109/icassp49357.2023.10095420" target="_blank" rel="noopener" class="item-link">DOI →</a>
+              <a href="https://doi.org/10.1109/icassp49357.2023.10095420" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -346,15 +434,15 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="journal">
           <div class="item-year">2023</div>
           <div class="item-body">
             <h3 class="item-title">Real-Time Navigation in Google Street View Using a Motor Imagery-Based BCI</h3>
             <p class="item-authors"><strong>L Yang</strong>, MM Van Hulle</p>
             <p class="item-venue">Sensors</p>
             <div class="item-foot">
-              <span class="item-cites">15 citations</span>
-              <a href="https://doi.org/10.3390/s23031704" target="_blank" rel="noopener" class="item-link">DOI →</a>
+              <span class="item-cites">16 citations</span>
+              <a href="https://doi.org/10.3390/s23031704" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -362,15 +450,15 @@
           </div>
         </li>
 
-        <li class="item pub">
+        <li class="item" data-type="journal">
           <div class="item-year">2021</div>
           <div class="item-body">
             <h3 class="item-title">Chronic Study on Brainwave Authentication in a Real-Life Setting: An LSTM-Based Bagging Approach</h3>
             <p class="item-authors"><strong>L Yang</strong>, A Libert, MM Van Hulle</p>
             <p class="item-venue">Biosensors</p>
             <div class="item-foot">
-              <span class="item-cites">11 citations</span>
-              <a href="https://doi.org/10.3390/bios11100404" target="_blank" rel="noopener" class="item-link">DOI →</a>
+              <span class="item-cites">12 citations</span>
+              <a href="https://doi.org/10.3390/bios11100404" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="item-meta-right">
@@ -379,12 +467,15 @@
         </li>
 
       </ol>
+      <p class="items-empty" hidden>No publications of this type yet.</p>
+      <p class="visually-hidden" role="status" id="filter-status"></p>
     </div>
   </section>
 
   <!-- ===== TALKS & TEACHING ===== -->
   <section class="section" id="talks">
     <div class="section-inner">
+      <p class="section-kicker">Invited &amp; teaching</p>
       <h2 class="section-title">Talks &amp; Teaching</h2>
 
       <div class="cv-grid">
@@ -433,8 +524,9 @@
   </section>
 
   <!-- ===== AWARDS ===== -->
-  <section class="section" id="awards">
+  <section class="section section--alt" id="awards">
     <div class="section-inner">
+      <p class="section-kicker">Recognition</p>
       <h2 class="section-title">Awards &amp; Honors</h2>
 
       <ol class="awards">
@@ -453,10 +545,10 @@
           </div>
         </li>
         <li class="award">
-          <div class="award-year">2019 — 2021</div>
+          <div class="award-year">2019 — 21</div>
           <div class="award-body">
             <div class="award-name">Cum laude — three consecutive KU Leuven degrees</div>
-            <div class="award-source">Advanced Master AI (75.33%, 2021) · MSc Electronics &amp; ICT (73.85%, 2020) · BSc Electronics (72.58%, 2019)</div>
+            <div class="award-source">Advanced Master AI (2021) · MSc Electronics &amp; ICT (2020) · BSc Electronics (2019)</div>
           </div>
         </li>
       </ol>
@@ -466,6 +558,7 @@
   <!-- ===== CONNECT ===== -->
   <section class="section" id="connect">
     <div class="section-inner">
+      <p class="section-kicker">Let's talk</p>
       <h2 class="section-title">Contact</h2>
 
       <div class="connect">
@@ -484,7 +577,7 @@
             <li><a href="https://github.com/LiuyinYang1101" target="_blank" rel="noopener">GitHub <span aria-hidden="true">→</span></a></li>
             <li><a href="https://www.linkedin.com/in/liuyin-yang-9496b51ba" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">→</span></a></li>
             <li><a href="https://orcid.org/0000-0002-4095-8841" target="_blank" rel="noopener">ORCID <span aria-hidden="true">→</span></a></li>
-            <li><a href="https://www.kuleuven.be/" target="_blank" rel="noopener">KU Leuven <span aria-hidden="true">→</span></a></li>
+            <li><a href="https://gbiomed.kuleuven.be/english/research/50000666/50000669/50488669/neuro_research/neuro_research_mvanhulle" target="_blank" rel="noopener">Lab — Computational Neuroscience <span aria-hidden="true">→</span></a></li>
           </ul>
         </div>
       </div>
@@ -497,7 +590,9 @@
   <footer class="footer">
     <span>© 2026 Liuyin Yang</span>
     <span class="footer-sep" aria-hidden="true">·</span>
-    <span>Last updated May 2026</span>
+    <span>Built with plain HTML, CSS &amp; a little EEG</span>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <span>Updated July 2026</span>
   </footer>
 
   <script src="script.js"></script>
