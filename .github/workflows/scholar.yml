@@ -1,0 +1,39 @@
+name: Update Google Scholar stats
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"   # Mondays 05:17 UTC
+  workflow_dispatch:        # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write   # commit the refreshed index.html
+  pages: write      # request a Pages rebuild
+
+concurrency:
+  group: scholar-stats
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch numbers from Google Scholar
+        run: python3 scripts/update_scholar.py
+
+      - name: Commit and publish if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: update Google Scholar stats"
+          git push
+          # Pushes made with GITHUB_TOKEN may not trigger a Pages build on their own
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" > /dev/null \
+            || echo "::warning::Could not request a Pages build."

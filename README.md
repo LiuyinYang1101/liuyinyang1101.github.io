@@ -27,6 +27,21 @@ python3 -m http.server 8000
    (or any repo → Settings → Pages → Deploy from branch `main`, root `/`)
 2. Your profile will be live at `https://<yourusername>.github.io`
 
+## Google Scholar numbers (auto-updated)
+
+`.github/workflows/scholar.yml` runs `scripts/update_scholar.py` every Monday: it reads the public
+Scholar profile and rewrites the totals (`data-scholar="…"`) and each paper's citation count
+(`<li class="item" data-scholar-id="…">`) in `index.html`, then commits only if something changed.
+Because a bot commits to `main`, run `git pull` before editing locally.
+
+- Run it by hand: Actions tab → *Update Google Scholar stats* → *Run workflow*, or locally
+  `python3 scripts/update_scholar.py [--dry-run]`.
+- New paper: copy an `<li class="item">` block and set `data-scholar-id` to the part after the colon
+  in its Scholar link (`citation_for_view=GLgF-JMAAAAJ:<id>`). The script lists Scholar papers that
+  are missing from the page but never adds them itself.
+- If Scholar blocks the GitHub runner (CAPTCHA), the job fails and the page keeps its last numbers;
+  the local command still works from a normal network.
+
 ## Customise
 
 | What | Where |
@@ -47,6 +62,8 @@ researcher-profile/
 ├── index.html      # all content
 ├── style.css       # design system + layout
 ├── script.js       # filter + active-nav highlight
+├── scripts/update_scholar.py        # refresh Scholar numbers in index.html
+├── .github/workflows/scholar.yml    # runs it weekly
 ├── assets/
 │   ├── photo.jpg   # your headshot (add manually)
 │   └── cv.pdf      # your CV (add manually)
