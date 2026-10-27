@@ -42,6 +42,11 @@ Because a bot commits to `main`, run `git pull` before editing locally.
 - If Scholar blocks the GitHub runner (CAPTCHA), the job fails and the page keeps its last numbers;
   the local command still works from a normal network.
 
+## CV (PDF)
+
+`assets/cv.pdf` is generated from `cv/cv.html`: edit the HTML, then run `bash scripts/build_cv.sh`
+(headless Chrome, A4) and commit both files. The Scholar workflow does not touch the CV.
+
 ## Customise
 
 | What | Where |
@@ -63,6 +68,8 @@ researcher-profile/
 ├── style.css       # design system + layout
 ├── script.js       # filter + active-nav highlight
 ├── scripts/update_scholar.py        # refresh Scholar numbers in index.html
+├── cv/cv.html                       # CV source
+├── scripts/build_cv.sh              # cv/cv.html -> assets/cv.pdf
 ├── .github/workflows/scholar.yml    # runs it weekly
 ├── assets/
 │   ├── photo.jpg   # your headshot (add manually)

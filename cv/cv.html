@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liuyin Yang — CV</title>
+  <meta name="robots" content="noindex" />
+  <!-- Source of assets/cv.pdf. Edit here, then run: bash scripts/build_cv.sh -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text: #17181f;
+      --text-2: #4a4c57;
+      --muted: #73757f;
+      --rule: #e3e3ea;
+      --accent: #4b3ff0;
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    @page { size: A4; margin: 14mm 15mm 13mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      font-family: var(--font-body);
+      font-size: 8.6pt;
+      line-height: 1.38;
+      color: var(--text);
+      background: #fff;
+    }
+    @media screen {
+      body { max-width: 210mm; margin: 0 auto; padding: 14mm 15mm; }
+    }
+    a { color: inherit; text-decoration: none; }
+    strong { font-weight: 600; }
+
+    /* ---- header ---- */
+    .head { display: flex; gap: 6mm; align-items: center; padding-bottom: 4mm; border-bottom: 1.4pt solid var(--accent); }
+    .head img { width: 25mm; height: 25mm; border-radius: 50%; object-fit: cover; flex: none; }
+    .head-main { flex: 1; }
+    .name { font-family: var(--font-display); font-weight: 700; font-size: 24pt; line-height: 1; letter-spacing: -0.02em; }
+    .role { margin-top: 1.6mm; margin-bottom: 1.4mm; font-size: 10pt; color: var(--text-2); }
+    .contact { margin-top: 0.8mm; font-family: var(--font-mono); font-size: 7.6pt; color: var(--text-2); display: flex; flex-wrap: wrap; gap: 0.6mm 3.2mm; }
+    .contact span::before { content: "·"; color: var(--accent); margin-right: 3.2mm; }
+    .contact span:first-child::before { content: none; }
+
+    .summary { margin-top: 3mm; font-size: 9.2pt; color: var(--text-2); }
+    .summary strong { color: var(--text); }
+
+    /* ---- sections ---- */
+    h2 {
+      font-family: var(--font-display); font-weight: 600; font-size: 11pt;
+      letter-spacing: 0.01em; color: var(--text);
+      margin: 4mm 0 1.8mm; padding-bottom: 0.9mm; border-bottom: 0.6pt solid var(--rule);
+      break-after: avoid;
+    }
+    h2::before { content: ""; display: inline-block; width: 2.2mm; height: 2.2mm; border-radius: 50%; background: var(--accent); margin-right: 2mm; vertical-align: 0.15em; }
+    h3 { font-family: var(--font-display); font-weight: 600; font-size: 8.8pt; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin: 2.2mm 0 1mm; break-after: avoid; }
+
+    .row { display: grid; grid-template-columns: 24mm 1fr; column-gap: 4mm; margin-bottom: 1.5mm; break-inside: avoid; }
+    .when { font-family: var(--font-mono); font-size: 7.6pt; color: var(--muted); padding-top: 0.3mm; white-space: nowrap; }
+    .what { font-weight: 600; }
+    .where { color: var(--text-2); }
+    .note { color: var(--text-2); }
+    ul.bullets { margin: 0.8mm 0 0 3.6mm; color: var(--text-2); }
+    ul.bullets li { margin-bottom: 0.3mm; }
+    ul.bullets li::marker { color: var(--accent); }
+
+    /* publications */
+    ol.pubs { list-style: none; counter-reset: pub; }
+    ol.pubs li { display: grid; grid-template-columns: 24mm 1fr; column-gap: 4mm; margin-bottom: 1.3mm; break-inside: avoid; }
+    .pub-title { font-weight: 600; }
+    .pub-authors { color: var(--text-2); }
+    .pub-authors b { color: var(--accent); font-weight: 600; }
+    .pub-venue { color: var(--text-2); font-style: italic; }
+    .pub-venue .tag { font-style: normal; font-weight: 600; color: var(--accent); }
+    .mono { font-family: var(--font-mono); font-size: 7.6pt; font-style: normal; }
+
+    .skills { display: grid; grid-template-columns: 24mm 1fr; column-gap: 4mm; row-gap: 1.2mm; }
+    .skills dt { font-family: var(--font-mono); font-size: 7.6pt; color: var(--muted); padding-top: 0.3mm; }
+    .skills dd { color: var(--text-2); }
+
+    .foot { margin-top: 4mm; font-family: var(--font-mono); font-size: 7pt; color: var(--muted); text-align: right; }
+  </style>
+</head>
+<body>
+
+  <header class="head">
+    <img src="../assets/profile-web.jpg" alt="" />
+    <div class="head-main">
+      <h1 class="name">Liuyin Yang</h1>
+      <p class="role">PhD Researcher · EEG Foundation Models &amp; Brain–Computer Interfaces · KU Leuven</p>
+      <p class="contact">
+        <span>liuyin.yang@kuleuven.be</span>
+        <span>+32 486 39 00 88</span>
+        <span><a href="https://liuyinyang1101.github.io/">liuyinyang1101.github.io</a></span>
+      </p>
+      <p class="contact">
+        <span><a href="https://scholar.google.com/citations?hl=en&amp;user=GLgF-JMAAAAJ">Google Scholar</a></span>
+        <span><a href="https://github.com/LiuyinYang1101">github.com/LiuyinYang1101</a></span>
+        <span><a href="https://orcid.org/0000-0002-4095-8841">ORCID 0000-0002-4095-8841</a></span>
+      </p>
+    </div>
+  </header>
+
+  <p class="summary">
+    I build <strong>EEG foundation models</strong> for brain–computer interfaces: transferring large models
+    pretrained on scalp EEG to <strong>intracranial recordings</strong> (CORTEG, NeurIPS 2026), testing when
+    foundation models beat traditional decoders (ICLR 2026), and decoding auditory and motor signals in
+    real-time BCI systems. Winner of the <strong>NeurIPS 2025 EEG Foundation Challenge</strong>.
+  </p>
+
+  <h2>Education</h2>
+  <div class="row">
+    <div class="when">2021 – now</div>
+    <div><span class="what">PhD, Biomedical Sciences (Medicine)</span> · <span class="where">KU Leuven, Belgium</span>
+      <div class="note">EEG-based brain–computer interfaces. Advisor: Prof. Marc M. Van Hulle.</div></div>
+  </div>
+  <div class="row">
+    <div class="when">2020 – 2021</div>
+    <div><span class="what">Advanced Master of Artificial Intelligence</span> · <span class="where">KU Leuven</span>
+      <div class="note">Big Data Analytics · Cum laude (75.33%)</div></div>
+  </div>
+  <div class="row">
+    <div class="when">2019 – 2020</div>
+    <div><span class="what">MSc, Electronics &amp; ICT Engineering Technology</span> · <span class="where">KU Leuven</span>
+      <div class="note">Cum laude (73.85%)</div></div>
+  </div>
+  <div class="row">
+    <div class="when">2017 – 2019</div>
+    <div><span class="what">BSc, Electronics Engineering</span> · <span class="where">KU Leuven</span>
+      <div class="note">Cum laude (72.58%)</div></div>
+  </div>
+  <div class="row">
+    <div class="when">2015 – 2017</div>
+    <div><span class="what">BEng, Electrical Engineering &amp; Automation</span> · <span class="where">Chongqing University, China</span>
+      <div class="note">GPA 3.3 / 4</div></div>
+  </div>
+
+  <h2>Research Experience</h2>
+  <div class="row">
+    <div class="when">2021 – now</div>
+    <div><span class="what">PhD Researcher</span> · <span class="where">Computational Neuroscience Group, KU Leuven</span>
+      <ul class="bullets">
+        <li>Cross-modality transfer of scalp-EEG foundation models to intracranial (ECoG) recordings with an electrode-aware spatial adapter and dual-stream tokenizer (CORTEG, NeurIPS 2026).</li>
+        <li>Pretrained a large spatiotemporal transformer on EEG with masked autoencoding; scaled pretraining on the VSC Tier-2 HPC; benchmarked EEG foundation models against traditional decoders across BCI tasks (ICLR 2026).</li>
+        <li>1st place, NeurIPS 2025 EEG Foundation Challenge (cross-task and cross-subject EEG decoding).</li>
+        <li>WaveNet-based auditory EEG regression model, 2nd place in the ICASSP 2023 Auditory EEG Grand Challenge.</li>
+        <li>Online motor-imagery BCI for real-time navigation in Google Street View; binocularly incongruent SSVEP BCI in VR (Meta Quest Pro).</li>
+      </ul></div>
+  </div>
+  <div class="row">
+    <div class="when">2019 – 2020</div>
+    <div><span class="what">Master's Thesis Researcher</span> · <span class="where">KU Leuven, Engineering Technology</span>
+      <div class="note">Real-time adaptive-filter speech enhancement (noise reduction) on a DSP board, deployed in an IoT communication system.</div></div>
+  </div>
+
+  <h2>Awards &amp; Honors</h2>
+  <div class="row">
+    <div class="when">2025</div>
+    <div><span class="what">1st Place — EEG Foundation Challenge 2025</span> · <span class="where">NeurIPS 2025 Competition Track (From Cross-Task to Cross-Subject EEG Decoding)</span></div>
+  </div>
+  <div class="row">
+    <div class="when">2023</div>
+    <div><span class="what">2nd Place — ICASSP 2023 Grand Challenge</span> · <span class="where">Auditory EEG Decoding Challenge</span></div>
+  </div>
+  <div class="row">
+    <div class="when">2019 – 2021</div>
+    <div><span class="what">Cum laude in three consecutive KU Leuven degrees</span> · <span class="where">Advanced Master AI, MSc Electronics &amp; ICT, BSc Electronics</span></div>
+  </div>
+
+  <h2>Publications</h2>
+
+  <h3>Conference papers</h3>
+  <ol class="pubs">
+    <li><span class="when">NeurIPS 2026</span><div>
+      <span class="pub-title">CORTEG: Foundation Models Enable Cross-Modality Representation Transfer from Scalp to Intracranial Brain Recordings.</span>
+      <span class="pub-authors"><b>L Yang</b>*, Q Sun*, B Van Dyck, EC Merino, MM Van Hulle (*equal contribution).</span>
+      <span class="pub-venue">Conference on Neural Information Processing Systems (NeurIPS) 2026, <span class="tag">poster</span>.</span></div></li>
+    <li><span class="when">ICLR 2026</span><div>
+      <span class="pub-title">Are EEG Foundation Models Worth It? Comparative Evaluation with Traditional Decoders in Diverse BCI Tasks.</span>
+      <span class="pub-authors"><b>L Yang</b>, Q Sun, A Li, MM Van Hulle.</span>
+      <span class="pub-venue">International Conference on Learning Representations (ICLR) 2026, <span class="tag">poster</span>.</span></div></li>
+    <li><span class="when">ICORR 2025</span><div>
+      <span class="pub-title">On the Impact of Proprioception in EEG Representations and Decoding during Human-Hand Exoskeleton Interaction.</span>
+      <span class="pub-authors">Q Sun, EC Merino, <b>L Yang</b>, A Faes, MM Van Hulle.</span>
+      <span class="pub-venue">International Conference on Rehabilitation Robotics (ICORR) 2025.</span></div></li>
+    <li><span class="when">ICASSP 2023</span><div>
+      <span class="pub-title">Decoding Auditory EEG Responses Using an Adapted WaveNet.</span>
+      <span class="pub-authors">B Van Dyck, <b>L Yang</b>, MM Van Hulle.</span>
+      <span class="pub-venue">IEEE ICASSP 2023, Auditory EEG Grand Challenge (<span class="tag">2nd place</span>).</span></div></li>
+  </ol>
+
+  <h3>Journal articles</h3>
+  <ol class="pubs">
+    <li><span class="when">2024</span><div>
+      <span class="pub-title">Unraveling EEG Correlates of Unimanual Finger Movements: Insights from Non-Repetitive Flexion and Extension Tasks.</span>
+      <span class="pub-authors">Q Sun, EC Merino, <b>L Yang</b>, MM Van Hulle.</span>
+      <span class="pub-venue">Journal of NeuroEngineering and Rehabilitation, 2024.</span></div></li>
+    <li><span class="when">2024</span><div>
+      <span class="pub-title">Binocularly Incongruent, Multifrequency-Coded SSVEP in VR: Feasibility and Characteristics.</span>
+      <span class="pub-authors"><b>L Yang</b>, Q Sun, MM Van Hulle.</span>
+      <span class="pub-venue">Journal of Neural Engineering, 2024.</span></div></li>
+    <li><span class="when">2024</span><div>
+      <span class="pub-title">Sea-Wave: Speech Envelope Reconstruction from Auditory EEG with an Adapted WaveNet.</span>
+      <span class="pub-authors"><b>L Yang</b>, B Van Dyck, MM Van Hulle.</span>
+      <span class="pub-venue">IEEE Open Journal of Signal Processing, 2024.</span></div></li>
+    <li><span class="when">2023</span><div>
+      <span class="pub-title">Real-Time Navigation in Google Street View Using a Motor Imagery-Based BCI.</span>
+      <span class="pub-authors"><b>L Yang</b>, MM Van Hulle.</span>
+      <span class="pub-venue">Sensors, 2023.</span></div></li>
+    <li><span class="when">2021</span><div>
+      <span class="pub-title">Chronic Study on Brainwave Authentication in a Real-Life Setting: An LSTM-Based Bagging Approach.</span>
+      <span class="pub-authors"><b>L Yang</b>, A Libert, MM Van Hulle.</span>
+      <span class="pub-venue">Biosensors, 2021.</span></div></li>
+  </ol>
+
+  <h3>Workshop papers</h3>
+  <ol class="pubs">
+    <li><span class="when">ICLR 2026 W</span><div>
+      <span class="pub-title">Do We Need Domain-Specific Time-Series Models? Insights from EEG Classification Benchmarks.</span>
+      <span class="pub-authors"><b>L Yang</b>, Q Sun, MM Van Hulle.</span>
+      <span class="pub-venue">1st ICLR Workshop on Time Series in the Age of Large Models (TSALM) 2026, <span class="tag">poster</span>.</span></div></li>
+    <li><span class="when">ICLR 2026 W</span><div>
+      <span class="pub-title">Learning Robust EEG Representations with a Large Spatiotemporal Transformer as a Foundation Model.</span>
+      <span class="pub-authors"><b>L Yang</b>, MM Van Hulle.</span>
+      <span class="pub-venue">1st ICLR Workshop on Time Series in the Age of Large Models (TSALM) 2026.</span></div></li>
+    <li><span class="when">ICLR 2026 W</span><div>
+      <span class="pub-title">Large EEG Foundation Model Learns Informative Low-Frequency Representations from Intracranial Brain Signals.</span>
+      <span class="pub-authors">Q Sun, <b>L Yang</b>, EC Merino, MM Van Hulle.</span>
+      <span class="pub-venue">1st ICLR Workshop on Time Series in the Age of Large Models (TSALM) 2026, <span class="tag">poster</span>.</span></div></li>
+  </ol>
+
+  <h3>Preprints &amp; datasets</h3>
+  <ol class="pubs">
+    <li><span class="when">2026</span><div>
+      <span class="pub-title">Characterization of Speech Imagery in Scalp EEG and Comparison with Motor Imagery.</span>
+      <span class="pub-authors">B Van Dyck, <b>L Yang</b>, Q Sun, A Li, MM Van Hulle.</span>
+      <span class="pub-venue">arXiv preprint <span class="mono">arXiv:2606.12223</span>.</span></div></li>
+    <li><span class="when">2025</span><div>
+      <span class="pub-title">CoMET: A Contrastive-Masked Brain Foundation Model for Universal EEG Representation.</span>
+      <span class="pub-authors">A Li, Z Wang, <b>L Yang</b>, Z Wang, T Xu, H Hu, MM Van Hulle.</span>
+      <span class="pub-venue">arXiv preprint <span class="mono">arXiv:2509.00314</span>.</span></div></li>
+    <li><span class="when">2026</span><div>
+      <span class="pub-title">A Multi-Paradigm EEG Dataset for Multi-Task BCI Applications.</span>
+      <span class="pub-authors"><b>L Yang</b>, B Van Dyck, Q Sun, A Li, MM Van Hulle.</span>
+      <span class="pub-venue">KU Leuven Research Data Repository, <span class="mono">doi:10.48804/3EUSTS</span>.</span></div></li>
+  </ol>
+
+  <h2>Talks &amp; Teaching</h2>
+  <div class="row">
+    <div class="when">Dec 2025</div>
+    <div><span class="what">Spotlight talk — EEG Foundation Challenge 2025</span> · <span class="where">NeurIPS 2025 Competition Track, San Diego</span></div>
+  </div>
+  <div class="row">
+    <div class="when">2025</div>
+    <div><span class="what">EEG Foundation Models</span> · <span class="where">IEEE NER 2025 Workshop</span></div>
+  </div>
+  <div class="row">
+    <div class="when">2025</div>
+    <div><span class="what">Scaling EEG Foundation Model Pretraining</span> · <span class="where">KU Leuven / UHasselt Tier-2 HPC User Day</span></div>
+  </div>
+  <div class="row">
+    <div class="when">recurring</div>
+    <div><span class="what">Teaching Assistant</span> · <span class="where">Brain–Computer Interfaces (MSc course), KU Leuven</span></div>
+  </div>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Deep learning</dt><dd>PyTorch, distributed training (DDP), transformers, self-supervised learning</dd>
+    <dt>EEG &amp; lab</dt><dd>EEG experiment design and data collection, signal processing, Unity (VR — Meta Quest Pro), Android Studio</dd>
+    <dt>Programming</dt><dd>Python, MATLAB, Octave, Java, C / C++ / C#, Assembler</dd>
+    <dt>Hardware</dt><dd>Vivado (FPGA), DSP board (C5515 eZdsp), Arduino, Eagle (PCB), microcontrollers</dd>
+    <dt>Languages</dt><dd>English — proficient · Chinese — proficient · French — intermediate</dd>
+  </dl>
+
+  <p class="foot">Updated October 2026 · liuyinyang1101.github.io</p>
+
+</body>
+</html>
