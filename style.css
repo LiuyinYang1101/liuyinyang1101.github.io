@@ -697,6 +697,7 @@ main:focus { outline: none; }
   margin-bottom: 0.3rem;
 }
 .item-authors strong { color: var(--c-accent); font-weight: var(--fw-semibold); }
+.item-note { color: var(--c-muted); white-space: nowrap; }
 .item-desc {
   font-size: var(--fs-body-sm);
   font-weight: var(--fw-regular);
