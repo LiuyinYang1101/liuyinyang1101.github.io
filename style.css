@@ -57,6 +57,7 @@
   --signal-2:      #08b6d4;
   --signal-opacity: 0.30;
   --glow:          none;
+  --hero-halo:     none;
 
   /* === LETTER SPACING === */
   --ls-tight:      -0.03em;
@@ -105,10 +106,11 @@
   --c-accent-strong:#a9a3ff;
   --c-on-accent:   #0a0b10;
   --c-accent-line: rgba(143, 136, 255, 0.30);
-  --signal-1:      #8f88ff;
-  --signal-2:      #2fd8ef;
-  --signal-opacity: 0.42;
-  --glow:          0 0 22px rgba(47, 216, 239, 0.28);
+  --signal-1:      #a59fff;
+  --signal-2:      #3fe6f7;
+  --signal-opacity: 0.8;
+  --glow:          drop-shadow(0 0 2px) drop-shadow(0 0 8px);
+  --hero-halo:     0 0 3px var(--c-bg), 0 0 10px var(--c-bg), 0 0 18px var(--c-bg);
   --shadow-sm:     0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md:     0 2px 10px rgba(0, 0, 0, 0.45), 0 16px 44px rgba(0, 0, 0, 0.5);
   --shadow-pop:    0 1px 3px rgba(0, 0, 0, 0.5);
@@ -131,10 +133,11 @@
     --c-accent-strong:#a9a3ff;
     --c-on-accent:   #0a0b10;
     --c-accent-line: rgba(143, 136, 255, 0.30);
-    --signal-1:      #8f88ff;
-    --signal-2:      #2fd8ef;
-    --signal-opacity: 0.42;
-    --glow:          0 0 22px rgba(47, 216, 239, 0.28);
+    --signal-1:      #a59fff;
+    --signal-2:      #3fe6f7;
+    --signal-opacity: 0.8;
+    --glow:          drop-shadow(0 0 2px) drop-shadow(0 0 8px);
+    --hero-halo:     0 0 3px var(--c-bg), 0 0 10px var(--c-bg), 0 0 18px var(--c-bg);
     --shadow-sm:     0 1px 3px rgba(0, 0, 0, 0.4);
     --shadow-md:     0 2px 10px rgba(0, 0, 0, 0.45), 0 16px 44px rgba(0, 0, 0, 0.5);
     --shadow-pop:    0 1px 3px rgba(0, 0, 0, 0.5);
@@ -285,6 +288,7 @@ main:focus { outline: none; }
 .hero-signal svg { width: 100%; height: 100%; display: block; }
 .hero-signal path {
   fill: none;
+  stroke: currentColor;
   stroke-width: 1.4;
   vector-effect: non-scaling-stroke;
   filter: var(--glow);
@@ -350,6 +354,8 @@ main:focus { outline: none; }
   text-wrap: pretty;
 }
 .hero-tagline strong { color: var(--c-text); font-weight: var(--fw-semibold); }
+/* dark mode: a background-coloured halo keeps the text legible over the glowing traces */
+.hero-eyebrow, .hero-name, .hero-tagline { text-shadow: var(--hero-halo); }
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
@@ -768,25 +774,50 @@ main:focus { outline: none; }
 .item-tag[data-kind="preprint"]   { --hue: #a855f7; }
 .item-tag[data-kind="dataset"]    { --hue: #06b6d4; }
 
-/* Featured (latest) publication */
-.item--featured {
+/* Selected publication: detailed card. Without JS every item shows its
+   details; script.js adds .pubs-ready and keeps one item .is-open. */
+.items { overflow-anchor: none; }
+.item.is-open {
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-left: 3px solid var(--c-accent);
   border-radius: var(--radius-l);
   padding: 1.9rem 1.8rem;
-  margin-bottom: 0.4rem;
+  margin: 0.4rem 0;
   box-shadow: var(--shadow-sm);
 }
-.item--featured .item-title { font-size: var(--fs-h3-lg); }
+.item.is-open:first-child { margin-top: 0; }
+.item.is-open .item-title { font-size: var(--fs-h3-lg); }
+.pubs-ready .item:not(.is-open) .item-more { display: none; }
+.pubs-ready .item.is-open .item-more { animation: item-more-in 0.28s ease-out; }
+@keyframes item-more-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+.pubs-ready .item { cursor: pointer; }
+.pubs-ready .item:not(.is-open):hover .item-title { color: var(--c-accent); }
+
+.item-toggle {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-medium);
+  color: var(--c-muted);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.item-toggle::after { content: " +"; }
+.item-toggle[aria-expanded="true"]::after { content: " −"; }
+.item-toggle:hover { color: var(--c-accent); }
 
 .item.hidden { display: none; }
 
-/* Border model that survives filtering: only the first visible item
-   after a visible featured card is borderless; the list is closed by
-   the .items bottom border regardless of which items are hidden. */
-.item--featured:not(.hidden) ~ .item:not(.hidden) { border-top: none; }
-.item:not(.item--featured):not(.hidden) ~ .item:not(.hidden) { border-top: 1px solid var(--c-border-2); }
+/* The visible item right below the open card drops its top rule
+   (.after-open is kept in sync by script.js as filters change). */
+.item.is-open:not(.hidden) + .item,
+.item.after-open { border-top-color: transparent; }
 
 .items-empty {
   padding: 2.5rem 0;
@@ -832,6 +863,17 @@ main:focus { outline: none; }
   font-size: var(--fs-meta);
   color: var(--c-muted);
   line-height: var(--lh-normal);
+}
+.award--grant { grid-template-columns: 92px 1fr auto; }
+.award-amount {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-medium);
+  color: var(--c-accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
+  padding-top: 4px;
 }
 
 /* ===================================================
@@ -972,9 +1014,10 @@ html.reveal-ready .reveal.is-visible {
     padding-top: 0;
     order: -1;
   }
-  .item--featured { padding: 1.6rem 1.3rem; }
+  .item.is-open { padding: 1.6rem 1.3rem; }
 
   .award { grid-template-columns: 72px 1fr; gap: 1rem; padding: 1.3rem 0; }
+  .award-amount { grid-column: 2; text-align: left; padding-top: 0; }
 
   .connect { grid-template-columns: 1fr; gap: 2.5rem; }
   .connect-email { font-size: var(--fs-h3); }
@@ -994,4 +1037,5 @@ html.reveal-ready .reveal.is-visible {
   * { scroll-behavior: auto !important; }
   html.reveal-ready .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   .btn-primary:hover { transform: none; }
+  .pubs-ready .item.is-open .item-more { animation: none; }
 }

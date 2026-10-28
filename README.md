@@ -9,7 +9,8 @@ A clean, responsive personal academic profile page designed for GitHub Pages.
 | **About / Intro** | Photo, title, research interests, contact |
 | **CV** | Education, experience, skills, PDF download |
 | **Projects** | Filterable list of research projects (BCI / Foundation Models / Signal Processing) |
-| **Awards** | Honors and scholarships |
+| **Grants** | Fellowships and compute grants |
+| **Awards** | Competition placings and honors |
 | **Links** | Email, Scholar, GitHub, LinkedIn, ORCID, Lab |
 
 ## How to Run Locally
@@ -39,6 +40,9 @@ Because a bot commits to `main`, run `git pull` before editing locally.
 - New paper: copy an `<li class="item">` block and set `data-scholar-id` to the part after the colon
   in its Scholar link (`citation_for_view=GLgF-JMAAAAJ:<id>`). The script lists Scholar papers that
   are missing from the page but never adds them itself.
+- Each paper's `item-flag` and `item-desc` paragraphs (and any `<span class="item-more">`) are its
+  details, shown only while the paper is selected; `is-open` marks the paper selected on page load.
+  Keep `<li>` tags out of an item: the script cuts each item at its first `</li>`.
 - If Scholar blocks the GitHub runner (CAPTCHA), the job fails and the page keeps its last numbers;
   the local command still works from a normal network.
 
@@ -56,6 +60,7 @@ Because a bot commits to `main`, run `git pull` before editing locally.
 | CV PDF | Place your CV at `assets/cv.pdf` |
 | Education / experience | `index.html` → `#cv` section |
 | Projects | `index.html` → `#projects` — copy/paste `<li class="pub-item">` blocks |
+| Grants | `index.html` → `#grants` section |
 | Awards | `index.html` → `#awards` section |
 | Social links | `index.html` → `#links` section — update `href` and handle text |
 | Colors / fonts | `style.css` → `:root` CSS custom properties |

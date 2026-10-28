@@ -92,7 +92,8 @@
 
       var path = document.createElementNS(NS, "path");
       path.setAttribute("d", d);
-      path.style.stroke = c % 2 === 0 ? "var(--signal-1)" : "var(--signal-2)";
+      // colour (not stroke) so the dark-mode drop-shadow glow takes the trace colour
+      path.style.color = c % 2 === 0 ? "var(--signal-1)" : "var(--signal-2)";
       svg.appendChild(path);
 
       if (!reduceMotion && path.getTotalLength && typeof path.animate === "function") {
@@ -141,6 +142,69 @@
         }
       });
     });
+  })();
+
+  // -------------------------------------------------
+  // Publication details: the selected item shows its full card
+  // -------------------------------------------------
+  (function pubDetails() {
+    var list = document.querySelector(".items");
+    if (!list) return;
+    var items = Array.prototype.slice.call(list.querySelectorAll(".item"));
+
+    // The visible item right below the open card loses its top rule.
+    function syncEdge() {
+      var prevOpen = false;
+      items.forEach(function (item) {
+        if (item.classList.contains("hidden")) { item.classList.remove("after-open"); return; }
+        item.classList.toggle("after-open", prevOpen);
+        prevOpen = item.classList.contains("is-open");
+      });
+    }
+
+    items.forEach(function (item, i) {
+      var foot = item.querySelector(".item-foot");
+      var desc = item.querySelector(".item-desc");
+      if (!foot || !desc) return;
+      desc.id = desc.id || "pub-detail-" + (i + 1);
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "item-toggle";
+      btn.textContent = "Details";
+      btn.setAttribute("aria-controls", desc.id);
+      btn.setAttribute("aria-expanded", String(item.classList.contains("is-open")));
+      foot.appendChild(btn);
+    });
+
+    function select(item) {
+      var top = item.getBoundingClientRect().top;
+      var open = !item.classList.contains("is-open");
+      items.forEach(function (it) {
+        var on = open && it === item;
+        it.classList.toggle("is-open", on);
+        var btn = it.querySelector(".item-toggle");
+        if (btn) btn.setAttribute("aria-expanded", String(on));
+      });
+      syncEdge();
+      // Keep the clicked item still while a card above it collapses.
+      window.scrollBy({ top: item.getBoundingClientRect().top - top, behavior: "instant" });
+    }
+
+    list.addEventListener("click", function (e) {
+      var item = e.target.closest(".item");
+      if (!item || e.target.closest("a")) return;
+      // A drag to select text is not a click on the item.
+      if (!e.target.closest(".item-toggle") && String(window.getSelection())) return;
+      select(item);
+    });
+
+    // Registered after the filter handlers, so it sees the new .hidden state.
+    document.querySelectorAll(".filter-btn").forEach(function (btn) {
+      btn.addEventListener("click", syncEdge);
+    });
+
+    root.classList.add("pubs-ready");
+    syncEdge();
   })();
 
   // -------------------------------------------------

@@ -20,7 +20,7 @@
       --font-body: "Inter", system-ui, sans-serif;
       --font-mono: "JetBrains Mono", ui-monospace, monospace;
     }
-    @page { size: A4; margin: 14mm 15mm 13mm; }
+    @page { size: A4; margin: 12mm 15mm 11mm; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body {
@@ -53,13 +53,13 @@
     h2 {
       font-family: var(--font-display); font-weight: 600; font-size: 11pt;
       letter-spacing: 0.01em; color: var(--text);
-      margin: 4mm 0 1.8mm; padding-bottom: 0.9mm; border-bottom: 0.6pt solid var(--rule);
+      margin: 3mm 0 1.8mm; padding-bottom: 0.9mm; border-bottom: 0.6pt solid var(--rule);
       break-after: avoid;
     }
     h2::before { content: ""; display: inline-block; width: 2.2mm; height: 2.2mm; border-radius: 50%; background: var(--accent); margin-right: 2mm; vertical-align: 0.15em; }
     h3 { font-family: var(--font-display); font-weight: 600; font-size: 8.8pt; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin: 2.2mm 0 1mm; break-after: avoid; }
 
-    .row { display: grid; grid-template-columns: 24mm 1fr; column-gap: 4mm; margin-bottom: 1.5mm; break-inside: avoid; }
+    .row { display: grid; grid-template-columns: 24mm 1fr; column-gap: 4mm; margin-bottom: 1.3mm; break-inside: avoid; }
     .when { font-family: var(--font-mono); font-size: 7.6pt; color: var(--muted); padding-top: 0.3mm; white-space: nowrap; }
     .what { font-weight: 600; }
     .where { color: var(--text-2); }
@@ -91,7 +91,7 @@
     <img src="../assets/profile-web.jpg" alt="" />
     <div class="head-main">
       <h1 class="name">Liuyin Yang</h1>
-      <p class="role">PhD Researcher · EEG Foundation Models &amp; Brain–Computer Interfaces · KU Leuven</p>
+      <p class="role">PhD Researcher · Brain Foundation Models &amp; Brain–Computer Interfaces · KU Leuven</p>
       <p class="contact">
         <span>liuyin.yang@kuleuven.be</span>
         <span><a href="https://liuyinyang1101.github.io/">liuyinyang1101.github.io</a></span>
@@ -105,7 +105,8 @@
   </header>
 
   <p class="summary">
-    I build <strong>EEG foundation models</strong> for brain–computer interfaces: transferring large models
+    I build <strong>brain foundation models</strong> spanning ECoG, EEG, sEEG and MEG for brain–computer
+    interfaces: transferring large models
     pretrained on scalp EEG to <strong>intracranial recordings</strong> (CORTEG, NeurIPS 2026), testing when
     foundation models beat traditional decoders (ICLR 2026), and decoding auditory and motor signals in
     real-time BCI systems. Winner of the <strong>NeurIPS 2025 EEG Foundation Challenge</strong>.
@@ -154,6 +155,17 @@
     <div class="when">2019 – 2020</div>
     <div><span class="what">Master's Thesis Researcher</span> · <span class="where">KU Leuven, Engineering Technology</span>
       <div class="note">Real-time adaptive-filter speech enhancement (noise reduction) on a DSP board, deployed in an IoT communication system.</div></div>
+  </div>
+
+  <h2>Grants &amp; Fellowships</h2>
+  <div class="row">
+    <div class="when">2025 – 2026</div>
+    <div><span class="what">VSC Compute Projects</span> · <span class="where">Flemish Supercomputer Center (VSC); 72,119 GPU hours in total</span>
+      <div class="note">2026_064: 39,961 h · 2025_038: 24,661 h · 2025_500: 7,497 h (special grant, NeurIPS 2025 challenge)</div></div>
+  </div>
+  <div class="row">
+    <div class="when">2021 – 2025</div>
+    <div><span class="what">FWO PhD Fellowship Strategic Basic Research (SB)</span> · <span class="where">Research Foundation – Flanders (FWO)</span></div>
   </div>
 
   <h2>Awards &amp; Honors</h2>
@@ -248,7 +260,7 @@
       <span class="pub-venue">KU Leuven Research Data Repository, <span class="mono">doi:10.48804/3EUSTS</span>.</span></div></li>
   </ol>
 
-  <h2>Talks &amp; Teaching</h2>
+  <h2>Talks, Teaching &amp; Service</h2>
   <div class="row">
     <div class="when">Dec 2025</div>
     <div><span class="what">Spotlight talk — EEG Foundation Challenge 2025</span> · <span class="where">NeurIPS 2025 Competition Track, San Diego</span></div>
@@ -265,6 +277,14 @@
     <div class="when">recurring</div>
     <div><span class="what">Teaching Assistant</span> · <span class="where">Brain–Computer Interfaces (MSc course), KU Leuven</span></div>
   </div>
+  <div class="row">
+    <div class="when">2023 – 2025</div>
+    <div><span class="what">Master's thesis daily supervisor</span> · <span class="where">VR imagined-speech speller and brain connectivity with a brain foundation model (2024–25); VR-based binocular SSVEP system (2023–24)</span></div>
+  </div>
+  <div class="row">
+    <div class="when">reviewing</div>
+    <div><span class="what">Reviewer</span> · <span class="where">journals: JNE, IEEE TPAMI · conferences: ICLR 2027, ICML 2026 Workshop FMSD</span></div>
+  </div>
 
   <h2>Skills</h2>
   <dl class="skills">
@@ -272,7 +292,7 @@
     <dt>EEG &amp; lab</dt><dd>EEG experiment design and data collection, signal processing, Unity (VR — Meta Quest Pro), Android Studio</dd>
     <dt>Programming</dt><dd>Python, MATLAB, Octave, Java, C / C++ / C#, Assembler</dd>
     <dt>Hardware</dt><dd>Vivado (FPGA), DSP board (C5515 eZdsp), Arduino, Eagle (PCB), microcontrollers</dd>
-    <dt>Languages</dt><dd>English — proficient · Chinese — proficient · French — intermediate</dd>
+    <dt>Languages</dt><dd>English — proficient · Chinese — proficient · French — intermediate (B1)</dd>
   </dl>
 
   <p class="foot">Updated October 2026 · liuyinyang1101.github.io</p>

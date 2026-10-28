@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liuyin Yang — EEG Foundation Models &amp; Brain–Computer Interfaces, KU Leuven</title>
-  <meta name="description" content="PhD researcher building EEG foundation models for brain–computer interfaces at the Computational Neuroscience Group, KU Leuven — cross-modality transfer from scalp EEG to intracranial recordings, auditory and motor decoding, and real-time BCI systems." />
+  <title>Liuyin Yang — Brain Foundation Models &amp; Brain–Computer Interfaces, KU Leuven</title>
+  <meta name="description" content="PhD researcher building brain foundation models (ECoG, EEG, sEEG, MEG) for brain–computer interfaces at the Computational Neuroscience Group, KU Leuven — cross-modality transfer from scalp EEG to intracranial recordings, auditory and motor decoding, and real-time BCI systems." />
   <meta name="author" content="Liuyin Yang" />
 
   <!-- theme-color adapts to light / dark -->
@@ -15,11 +15,11 @@
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://liuyinyang1101.github.io/" />
   <meta property="og:title" content="Liuyin Yang — PhD Researcher, KU Leuven" />
-  <meta property="og:description" content="EEG foundation models, cross-modality scalp-to-intracranial transfer, and real-time brain–computer interfaces." />
+  <meta property="og:description" content="Brain foundation models across ECoG, EEG, sEEG and MEG, cross-modality scalp-to-intracranial transfer, and real-time brain–computer interfaces." />
   <meta property="og:image" content="https://liuyinyang1101.github.io/assets/profile-web.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Liuyin Yang — PhD Researcher, KU Leuven" />
-  <meta name="twitter:description" content="EEG foundation models, cross-modality scalp-to-intracranial transfer, and real-time brain–computer interfaces." />
+  <meta name="twitter:description" content="Brain foundation models across ECoG, EEG, sEEG and MEG, cross-modality scalp-to-intracranial transfer, and real-time brain–computer interfaces." />
   <meta name="twitter:image" content="https://liuyinyang1101.github.io/assets/profile-web.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -52,6 +52,7 @@
         <li><a href="#cv">CV</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#talks">Talks</a></li>
+        <li><a href="#grants">Grants</a></li>
         <li><a href="#awards">Awards</a></li>
         <li><a href="#connect">Contact</a></li>
       </ul>
@@ -80,12 +81,13 @@
       <p class="hero-eyebrow">PhD Researcher · Computational Neuroscience · KU Leuven</p>
       <h1 class="hero-name">Liuyin Yang</h1>
       <p class="hero-tagline">
-        I build <strong>EEG foundation models</strong> for brain–computer interfaces — teaching
+        I build <strong>brain foundation models</strong> spanning ECoG, EEG, sEEG and MEG for
+        brain–computer interfaces — teaching
         large models pretrained on scalp EEG to transfer into <strong>intracranial recordings</strong>,
         and turning neural signals into real-time control, auditory, and motor decoding.
       </p>
       <ul class="hero-tags">
-        <li>EEG Foundation Models</li>
+        <li>Brain Foundation Models</li>
         <li>Brain–Computer Interfaces</li>
         <li>Scalp → Intracranial Transfer</li>
         <li>Auditory &amp; Motor Decoding</li>
@@ -188,7 +190,7 @@
             <div class="skill-list"><span>Vivado (FPGA)</span><span>DSP Board (C5515 eZdsp)</span><span>Arduino</span><span>Eagle (PCB)</span><span>Microcontrollers</span></div>
 
             <div class="skill-cat">Languages</div>
-            <div class="skill-list"><span>English — proficient</span><span><span lang="zh">中文</span> — proficient</span><span><span lang="fr">Français</span> — intermediate</span></div>
+            <div class="skill-list"><span>English — proficient</span><span><span lang="zh">中文</span> — proficient</span><span><span lang="fr">Français</span> — intermediate (B1)</span></div>
           </div>
         </div>
       </div>
@@ -238,13 +240,13 @@
 
       <ol class="items">
 
-        <li class="item item--featured" data-type="conference" data-scholar-id="YsMSGLbcyi4C">
+        <li class="item is-open" data-type="conference" data-scholar-id="YsMSGLbcyi4C">
           <div class="item-year">2026</div>
           <div class="item-body">
-            <p class="item-flag">NeurIPS 2026 · Poster</p>
+            <p class="item-flag item-more">NeurIPS 2026 · Poster</p>
             <h3 class="item-title">CORTEG: Foundation Models Enable Cross-Modality Representation Transfer from Scalp to Intracranial Brain Recordings</h3>
             <p class="item-authors"><strong>L Yang</strong>*, Q Sun*, B Van Dyck, EC Merino, MM Van Hulle <span class="item-note">· *equal contribution</span></p>
-            <p class="item-desc">
+            <p class="item-desc item-more">
               Can a large model pretrained on scalp EEG be adapted to <strong>intracranial (ECoG)</strong> recordings?
               CORTEG bridges the two with an electrode-aware spatial adapter and a dual-stream tokenizer for
               low-frequency and high-gamma activity, then calibrates to a held-out patient in minutes — matching
@@ -265,8 +267,18 @@
         <li class="item" data-type="conference" data-scholar-id="9yKSN-GCB0IC">
           <div class="item-year">2026</div>
           <div class="item-body">
+            <p class="item-flag item-more">ICLR 2026 · Poster</p>
             <h3 class="item-title">Are EEG Foundation Models Worth It? Comparative Evaluation with Traditional Decoders in Diverse BCI Tasks</h3>
             <p class="item-authors"><strong>L Yang</strong>, Q Sun, A Li, MM Van Hulle</p>
+            <p class="item-desc item-more">
+              Do EEG foundation models actually beat traditional decoders? A statistically rigorous
+              benchmark of state-of-the-art EEG foundation models across diverse datasets, decoding
+              tasks and six evaluation protocols, alongside <strong>ST-EEGFormer</strong>, a simple
+              ViT baseline pretrained with masked autoencoding on over 8M EEG segments. Fine-tuned
+              foundation models do well in data-rich, population-level settings, but often fail to
+              significantly outperform compact networks or even classical non-neural decoders when
+              data are scarce.
+            </p>
             <p class="item-venue">International Conference on Learning Representations (ICLR) · Poster</p>
             <div class="item-foot">
               <span class="item-cites">28 citations</span>
@@ -281,8 +293,16 @@
         <li class="item" data-type="preprint" data-scholar-id="eQOLeE2rZwMC">
           <div class="item-year">2026</div>
           <div class="item-body">
+            <p class="item-flag item-more">arXiv 2026 · Preprint</p>
             <h3 class="item-title">Characterization of Speech Imagery in Scalp EEG and Comparison with Motor Imagery</h3>
             <p class="item-authors">B Van Dyck, <strong>L Yang</strong>, Q Sun, A Li, MM Van Hulle</p>
+            <p class="item-desc item-more">
+              Does imagined speech look like motor imagery in scalp EEG? In 34 participants, finger
+              motor imagery showed the expected contralateral mu/alpha and beta desynchronization,
+              whereas speech imagery showed a weaker, more distributed <strong>increase</strong> in
+              alpha power relative to no-task trials, and was harder to decode (balanced accuracy
+              0.56 vs. 0.72 for motor imagery).
+            </p>
             <p class="item-venue">arXiv preprint · <span class="mono">arXiv:2606.12223</span></p>
             <div class="item-foot">
               <a href="https://arxiv.org/abs/2606.12223" target="_blank" rel="noopener" class="item-link">arXiv <span aria-hidden="true">→</span></a>
@@ -296,8 +316,16 @@
         <li class="item" data-type="workshop" data-scholar-id="Tyk-4Ss8FVUC">
           <div class="item-year">2026</div>
           <div class="item-body">
+            <p class="item-flag item-more">ICLR 2026 · TSALM Workshop · Poster</p>
             <h3 class="item-title">Large EEG Foundation Model Learns Informative Low-Frequency Representations from Intracranial Brain Signals</h3>
             <p class="item-authors">Q Sun, <strong>L Yang</strong>, EC Merino, MM Van Hulle</p>
+            <p class="item-desc item-more">
+              Can a scalp-EEG foundation model transfer to invasive recordings? An ECoG-to-EEG
+              channel-projection module and a lightweight adaptation strategy let the pretrained
+              backbone decode ECoG, and the adapted model <strong>outperforms conventional ECoG
+              decoders</strong> at extracting finger-movement information from low-frequency (128
+              Hz) signals.
+            </p>
             <p class="item-venue">1st ICLR Workshop on Time Series in the Age of Large Models (TSALM) · Poster</p>
             <div class="item-foot">
               <span class="item-cites">1 citation</span>
@@ -312,8 +340,17 @@
         <li class="item" data-type="workshop" data-scholar-id="W7OEmFMy1HYC">
           <div class="item-year">2026</div>
           <div class="item-body">
+            <p class="item-flag item-more">ICLR 2026 · TSALM Workshop · Poster</p>
             <h3 class="item-title">Do We Need Domain-Specific Time-Series Models? Insights from EEG Classification Benchmarks</h3>
             <p class="item-authors"><strong>L Yang</strong>, Q Sun, MM Van Hulle</p>
+            <p class="item-desc item-more">
+              Does the broad pre-training of generic time-series foundation models pay off in a
+              specialized domain? Benchmarking Mantis (~8M parameters) and MOMENT (~300M) on four
+              public EEG datasets against EEG foundation models and classic baselines: fine-tuning
+              often matches EEG-specific models while linear probing transfers poorly, and a
+              <strong>randomly initialized Mantis performs comparably to the pretrained
+              one</strong>.
+            </p>
             <p class="item-venue">1st ICLR Workshop on Time Series in the Age of Large Models (TSALM) · Poster</p>
             <div class="item-foot">
               <a href="https://scholar.google.com/scholar?q=Do+We+Need+Domain-Specific+Time-Series+Models+EEG+Classification+Benchmarks" target="_blank" rel="noopener" class="item-link">Scholar <span aria-hidden="true">→</span></a>
@@ -327,8 +364,15 @@
         <li class="item" data-type="workshop" data-scholar-id="ufrVoPGSRksC">
           <div class="item-year">2026</div>
           <div class="item-body">
+            <p class="item-flag item-more">ICLR 2026 · TSALM Workshop</p>
             <h3 class="item-title">Learning Robust EEG Representations with a Large Spatiotemporal Transformer as a Foundation Model</h3>
             <p class="item-authors"><strong>L Yang</strong>, MM Van Hulle</p>
+            <p class="item-desc item-more">
+              Introduces <strong>ST-EEGFormer</strong>, a simple spatiotemporal EEG transformer that
+              projects patches of raw EEG into an embedding space enriched with spatial and temporal
+              embeddings, so that one model can handle recordings with different channel setups, and
+              evaluates how well it adapts across diverse BCI control paradigms.
+            </p>
             <p class="item-venue">1st ICLR Workshop on Time Series in the Age of Large Models (TSALM)</p>
             <div class="item-foot">
               <span class="item-cites">1 citation</span>
@@ -343,8 +387,17 @@
         <li class="item" data-type="dataset" data-scholar-id="WF5omc3nYNoC">
           <div class="item-year">2026</div>
           <div class="item-body">
+            <p class="item-flag item-more">KU Leuven RDR 2026 · Open dataset</p>
             <h3 class="item-title">A Multi-Paradigm EEG Dataset for Multi-Task BCI Applications</h3>
             <p class="item-authors"><strong>L Yang</strong>, B Van Dyck, Q Sun, A Li, MM Van Hulle</p>
+            <p class="item-desc item-more">
+              EEG from <strong>34 healthy participants</strong>, each recorded in a single session
+              covering SSVEP, motor imagery and imagined speech, plus structured artifact recordings
+              (eye blinks, jaw clenching, breath holding, hand clenching), resting state and
+              questionnaires. Randomly interleaved test blocks enable realistic asynchronous
+              decoding, and standardized preprocessing pipelines support benchmarking and
+              cross-paradigm transfer learning.
+            </p>
             <p class="item-venue">KU Leuven Research Data Repository · <span class="mono">doi:10.48804/3EUSTS</span></p>
             <div class="item-foot">
               <a href="https://doi.org/10.48804/3EUSTS" target="_blank" rel="noopener" class="item-link">Dataset <span aria-hidden="true">→</span></a>
@@ -358,8 +411,16 @@
         <li class="item" data-type="preprint" data-scholar-id="IjCSPb-OGe4C">
           <div class="item-year">2025</div>
           <div class="item-body">
+            <p class="item-flag item-more">arXiv 2025 · Preprint</p>
             <h3 class="item-title">CoMET: A Contrastive-Masked Brain Foundation Model for Universal EEG Representation</h3>
             <p class="item-authors">A Li, Z Wang, <strong>L Yang</strong>, Z Wang, T Xu, H Hu, MM Van Hulle</p>
+            <p class="item-desc item-more">
+              Masked reconstruction alone over-focuses on local similarity between highly correlated
+              neighboring channels. CoMET pairs an EEG masked autoencoder with a <strong>contrastive
+              framework using mirror-scale augmentation</strong> to learn global discriminative
+              patterns; pretrained on over one million samples from more than 3,000 subjects, it
+              reaches state-of-the-art results on ten downstream datasets.
+            </p>
             <p class="item-venue">arXiv preprint · <span class="mono">arXiv:2509.00314</span></p>
             <div class="item-foot">
               <span class="item-cites">10 citations</span>
@@ -374,9 +435,18 @@
         <li class="item" data-type="conference" data-scholar-id="u-x6o8ySG0sC">
           <div class="item-year">2025</div>
           <div class="item-body">
+            <p class="item-flag item-more">ICORR 2025</p>
             <h3 class="item-title">On the Impact of Proprioception in EEG Representations and Decoding during Human-Hand Exoskeleton Interaction</h3>
             <p class="item-authors">Q Sun, EC Merino, <strong>L Yang</strong>, A Faes, MM Van Hulle</p>
-            <p class="item-venue">International Conference on Rehabilitation Robotics (ICORR)</p>
+            <p class="item-desc item-more">
+              How does the proprioceptive feedback of a hand exoskeleton shape EEG? In 25
+              participants performing imagined, passive and combined imagined-plus-passive finger
+              flexion with a cable-driven exoskeleton, exoskeleton-driven movement evoked
+              significantly stronger sensorimotor alpha/beta desynchronization than imagery alone
+              and was readily decoded against rest, but <strong>separating motor intention from the
+              exoskeleton&#8217;s own feedback</strong> remained hard.
+            </p>
+            <p class="item-venue">International Conference on Rehabilitation Robotics (ICORR)<span class="item-more"> · pp. 186–192</span></p>
             <div class="item-foot">
               <a href="https://doi.org/10.1109/icorr66766.2025.11063039" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
             </div>
@@ -389,9 +459,18 @@
         <li class="item" data-type="journal" data-scholar-id="d1gkVwhDpl0C">
           <div class="item-year">2024</div>
           <div class="item-body">
+            <p class="item-flag item-more">JNER 2024</p>
             <h3 class="item-title">Unraveling EEG Correlates of Unimanual Finger Movements: Insights from Non-Repetitive Flexion and Extension Tasks</h3>
             <p class="item-authors">Q Sun, EC Merino, <strong>L Yang</strong>, MM Van Hulle</p>
-            <p class="item-venue">Journal of NeuroEngineering and Rehabilitation</p>
+            <p class="item-desc item-more">
+              Do individual finger movements have distinct, decodable EEG correlates? Sixteen
+              participants performed five individual and four coordinated finger flexions and
+              extensions during high-density EEG and finger tracking. Movement versus rest was
+              detected with over 80% accuracy, but telling fingers apart was hard because their
+              neural correlates overlap, with the <strong>thumb</strong> standing out as the most
+              distinctive.
+            </p>
+            <p class="item-venue">Journal of NeuroEngineering and Rehabilitation<span class="item-more"> · vol. 21, art. 228</span></p>
             <div class="item-foot">
               <span class="item-cites">22 citations</span>
               <a href="https://doi.org/10.1186/s12984-024-01533-4" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
@@ -405,9 +484,18 @@
         <li class="item" data-type="journal" data-scholar-id="Y0pCki6q_DkC">
           <div class="item-year">2024</div>
           <div class="item-body">
+            <p class="item-flag item-more">J. Neural Eng. 2024</p>
             <h3 class="item-title">Binocularly Incongruent, Multifrequency-Coded SSVEP in VR: Feasibility and Characteristics</h3>
             <p class="item-authors"><strong>L Yang</strong>, Q Sun, MM Van Hulle</p>
-            <p class="item-venue">Journal of Neural Engineering</p>
+            <p class="item-desc item-more">
+              A systematic study of <strong>binocularly incongruent</strong> SSVEP in virtual
+              reality, where each eye sees a stimulus flickering at a different frequency, covering
+              dual-, triple- and quadruple-frequency codes (several of them new) and comparing them
+              with congruent stimulation. The results show binocular summation and suppression
+              effects, and underline how paradigm choice and decoder design shape performance and
+              user comfort.
+            </p>
+            <p class="item-venue">Journal of Neural Engineering<span class="item-more"> · vol. 21(5), 056013</span></p>
             <div class="item-foot">
               <span class="item-cites">9 citations</span>
               <a href="https://doi.org/10.1088/1741-2552/ad775f" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
@@ -421,9 +509,18 @@
         <li class="item" data-type="journal" data-scholar-id="zYLM7Y9cAGgC">
           <div class="item-year">2024</div>
           <div class="item-body">
+            <p class="item-flag item-more">IEEE OJSP 2024</p>
             <h3 class="item-title">Sea-Wave: Speech Envelope Reconstruction from Auditory EEG with an Adapted WaveNet</h3>
             <p class="item-authors"><strong>L Yang</strong>, B Van Dyck, MM Van Hulle</p>
-            <p class="item-venue">IEEE Open Journal of Signal Processing</p>
+            <p class="item-desc item-more">
+              Extends our ICASSP 2023 challenge entry into <strong>Sea-Wave</strong>, a
+              WaveNet-based model that reconstructs the speech envelope from EEG and outperforms the
+              previous state of the art. Ablations and a hyperparameter search give a
+              subject-independent Pearson correlation of 0.226 on seen and 0.116 on unseen subjects,
+              and subject-specific fine-tuning adds a further 30% average relative gain on seen
+              subjects.
+            </p>
+            <p class="item-venue">IEEE Open Journal of Signal Processing<span class="item-more"> · vol. 5, pp. 686–699</span></p>
             <div class="item-foot">
               <span class="item-cites">5 citations</span>
               <a href="https://doi.org/10.1109/ojsp.2024.3378594" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
@@ -437,9 +534,16 @@
         <li class="item" data-type="conference" data-scholar-id="2osOgNQ5qMEC">
           <div class="item-year">2023</div>
           <div class="item-body">
+            <p class="item-flag item-more">ICASSP 2023 · 2nd place</p>
             <h3 class="item-title">Decoding Auditory EEG Responses Using an Adapted WaveNet</h3>
             <p class="item-authors">B Van Dyck, <strong>L Yang</strong>, MM Van Hulle</p>
-            <p class="item-venue">IEEE ICASSP 2023 — 2nd place, Auditory EEG Grand Challenge</p>
+            <p class="item-desc item-more">
+              A WaveNet-based model that reconstructs the speech envelope from auditory EEG. It
+              placed second in the regression subtask of the ICASSP 2023 Auditory EEG Challenge and
+              achieved the <strong>highest score on held-out subjects</strong>, with only 341k
+              trainable parameters.
+            </p>
+            <p class="item-venue">IEEE ICASSP 2023 — 2nd place, Auditory EEG Grand Challenge<span class="item-more"> · pp. 1–2</span></p>
             <div class="item-foot">
               <span class="item-cites">20 citations</span>
               <a href="https://doi.org/10.1109/icassp49357.2023.10095420" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
@@ -453,9 +557,17 @@
         <li class="item" data-type="journal" data-scholar-id="qjMakFHDy7sC">
           <div class="item-year">2023</div>
           <div class="item-body">
+            <p class="item-flag item-more">Sensors 2023</p>
             <h3 class="item-title">Real-Time Navigation in Google Street View Using a Motor Imagery-Based BCI</h3>
             <p class="item-authors"><strong>L Yang</strong>, MM Van Hulle</p>
-            <p class="item-venue">Sensors</p>
+            <p class="item-desc item-more">
+              A motor-imagery BCI for navigating <strong>Google Street View</strong> with only eight
+              dry EEG electrodes. A middle-level control scheme keeps the number of commands small
+              and eye blinks act as an extra control signal to avoid decoder mistakes; offline and
+              online experiments with 20 participants showed acceptable performance despite the
+              minimal setup.
+            </p>
+            <p class="item-venue">Sensors<span class="item-more"> · vol. 23(3), 1704</span></p>
             <div class="item-foot">
               <span class="item-cites">18 citations</span>
               <a href="https://doi.org/10.3390/s23031704" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
@@ -469,9 +581,16 @@
         <li class="item" data-type="journal" data-scholar-id="UeHWp8X0CEIC">
           <div class="item-year">2021</div>
           <div class="item-body">
+            <p class="item-flag item-more">Biosensors 2021</p>
             <h3 class="item-title">Chronic Study on Brainwave Authentication in a Real-Life Setting: An LSTM-Based Bagging Approach</h3>
             <p class="item-authors"><strong>L Yang</strong>, A Libert, MM Van Hulle</p>
-            <p class="item-venue">Biosensors</p>
+            <p class="item-desc item-more">
+              Can brainwaves authenticate users outside the lab? Using a commercial dry-electrode
+              headset and chronic recordings from 15 people performing and imagining motor tasks, an
+              <strong>LSTM with bootstrap aggregating (bagging)</strong> reached 93.0%
+              authentication accuracy with a 1.9% false-acceptance rate on the combined tasks.
+            </p>
+            <p class="item-venue">Biosensors<span class="item-more"> · vol. 11(10), 404</span></p>
             <div class="item-foot">
               <span class="item-cites">13 citations</span>
               <a href="https://doi.org/10.3390/bios11100404" target="_blank" rel="noopener" class="item-link">DOI <span aria-hidden="true">→</span></a>
@@ -491,8 +610,8 @@
   <!-- ===== TALKS & TEACHING ===== -->
   <section class="section" id="talks">
     <div class="section-inner">
-      <p class="section-kicker">Invited &amp; teaching</p>
-      <h2 class="section-title">Talks &amp; Teaching</h2>
+      <p class="section-kicker">Invited · teaching · service</p>
+      <h2 class="section-title">Talks, Teaching &amp; Service</h2>
 
       <div class="cv-grid">
         <div class="cv-block">
@@ -524,7 +643,7 @@
         </div>
 
         <div class="cv-block">
-          <h3 class="cv-block-title">Teaching</h3>
+          <h3 class="cv-block-title">Teaching &amp; Supervision</h3>
           <ol class="timeline">
             <li class="timeline-item">
               <div class="tl-year">recurring</div>
@@ -533,14 +652,92 @@
                 <div class="tl-inst">Brain-Computer Interfaces (MSc course) · KU Leuven</div>
               </div>
             </li>
+            <li class="timeline-item">
+              <div class="tl-year">2024 — 25</div>
+              <div class="tl-body">
+                <div class="tl-role">Master's Thesis Daily Supervisor</div>
+                <div class="tl-inst">KU Leuven</div>
+                <div class="tl-note">VR-based imagined-speech speller<br />Brain connectivity with a brain foundation model</div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="tl-year">2023 — 24</div>
+              <div class="tl-body">
+                <div class="tl-role">Master's Thesis Daily Supervisor</div>
+                <div class="tl-inst">KU Leuven</div>
+                <div class="tl-note">VR-based binocular SSVEP system</div>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="cv-block">
+          <h3 class="cv-block-title">Peer Review</h3>
+          <ol class="timeline">
+            <li class="timeline-item">
+              <div class="tl-year">journals</div>
+              <div class="tl-body">
+                <div class="tl-role">Journal Reviewer</div>
+                <div class="tl-inst">Journal of Neural Engineering (JNE) · IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="tl-year">2026</div>
+              <div class="tl-body">
+                <div class="tl-role">Conference Reviewer</div>
+                <div class="tl-inst">ICLR 2027 · ICML 2026 Workshop FMSD</div>
+              </div>
+            </li>
           </ol>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===== GRANTS ===== -->
+  <section class="section section--alt" id="grants">
+    <div class="section-inner">
+      <p class="section-kicker">Funding · 72,119 GPU hours on VSC</p>
+      <h2 class="section-title">Grants &amp; Fellowships</h2>
+
+      <ol class="awards">
+        <li class="award award--grant">
+          <div class="award-year">2026</div>
+          <div class="award-body">
+            <div class="award-name">VSC Compute Project <span class="mono">2026_064</span></div>
+            <div class="award-source">Flemish Supercomputer Center (VSC) · HPC GPU allocation for intracranial (ECoG) foundation-model training</div>
+          </div>
+          <div class="award-amount">39,961 GPU hours</div>
+        </li>
+        <li class="award award--grant">
+          <div class="award-year">2025</div>
+          <div class="award-body">
+            <div class="award-name">VSC Compute Project <span class="mono">2025_500</span></div>
+            <div class="award-source">Flemish Supercomputer Center (VSC) · Special competition grant for the EEG Foundation Challenge (NeurIPS 2025)</div>
+          </div>
+          <div class="award-amount">7,497 GPU hours</div>
+        </li>
+        <li class="award award--grant">
+          <div class="award-year">2025</div>
+          <div class="award-body">
+            <div class="award-name">VSC Compute Project <span class="mono">2025_038</span></div>
+            <div class="award-source">Flemish Supercomputer Center (VSC) · HPC GPU allocation · <a href="https://www.vscentrum.be/" target="_blank" rel="noopener">vscentrum.be</a></div>
+          </div>
+          <div class="award-amount">24,661 GPU hours</div>
+        </li>
+        <li class="award award--grant">
+          <div class="award-year">2021 — 25</div>
+          <div class="award-body">
+            <div class="award-name">FWO PhD Fellowship Strategic Basic Research (SB)</div>
+            <div class="award-source">Research Foundation – Flanders (FWO) · <a href="https://www.fwo.be/" target="_blank" rel="noopener">fwo.be</a></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
   <!-- ===== AWARDS ===== -->
-  <section class="section section--alt" id="awards">
+  <section class="section" id="awards">
     <div class="section-inner">
       <p class="section-kicker">Recognition</p>
       <h2 class="section-title">Awards &amp; Honors</h2>
@@ -572,7 +769,7 @@
   </section>
 
   <!-- ===== CONNECT ===== -->
-  <section class="section" id="connect">
+  <section class="section section--alt" id="connect">
     <div class="section-inner">
       <p class="section-kicker">Let's talk</p>
       <h2 class="section-title">Contact</h2>
