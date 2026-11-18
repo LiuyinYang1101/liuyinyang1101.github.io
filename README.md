@@ -30,7 +30,7 @@ python3 -m http.server 8000
 
 ## Google Scholar numbers (auto-updated)
 
-`.github/workflows/scholar.yml` runs `scripts/update_scholar.py` every Monday: it reads the public
+`.github/workflows/scholar.yml` runs `scripts/update_scholar.py` once a week: it reads the public
 Scholar profile and rewrites the totals (`data-scholar="…"`) and each paper's citation count
 (`<li class="item" data-scholar-id="…">`) in `index.html`, then commits only if something changed.
 Because a bot commits to `main`, run `git pull` before editing locally.
@@ -43,8 +43,11 @@ Because a bot commits to `main`, run `git pull` before editing locally.
 - Each paper's `item-flag` and `item-desc` paragraphs (and any `<span class="item-more">`) are its
   details, shown only while the paper is selected; `is-open` marks the paper selected on page load.
   Keep `<li>` tags out of an item: the script cuts each item at its first `</li>`.
-- If Scholar blocks the GitHub runner (CAPTCHA), the job fails and the page keeps its last numbers;
-  the local command still works from a normal network.
+- Scholar refuses some cloud IP addresses (HTTP 403, script exit code 75), so the job is scheduled
+  daily and skips the fetch once one has succeeded that week (a cache entry `scholar-ok-<year>-W<week>`).
+  A blocked run ends green with a warning and the page keeps its last numbers; the job ends red only
+  on a Sunday after a whole week of blocked runs, or when a run started by hand is blocked. The local
+  command works from a normal network: run it, then commit and push `index.html`.
 
 ## CV (PDF)
 

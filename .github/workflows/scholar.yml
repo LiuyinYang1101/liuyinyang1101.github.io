@@ -1,9 +1,14 @@
 name: Update Google Scholar stats
 
+# One successful refresh per ISO week. Google Scholar refuses some cloud IP addresses
+# (HTTP 403), and every run gets a different runner, so the job is scheduled daily and
+# stops trying once a fetch has succeeded that week. A blocked run ends green with a
+# warning; only a whole week of blocked runs (Monday to Sunday) ends red.
+
 on:
   schedule:
-    - cron: "17 5 * * 1"   # Mondays 05:17 UTC
-  workflow_dispatch:        # "Run workflow" button in the Actions tab
+    - cron: "17 5 * * *"    # daily 05:17 UTC; a no-op once this week's fetch has succeeded
+  workflow_dispatch:        # "Run workflow" button in the Actions tab (always fetches)
 
 permissions:
   contents: write   # commit the refreshed index.html
@@ -17,12 +22,43 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+
+      - name: This week's marker
+        id: week
+        run: echo "key=scholar-ok-$(date -u +%G-W%V)" >> "$GITHUB_OUTPUT"
+
+      - name: Has this week's fetch already succeeded?
+        id: done
+        uses: actions/cache/restore@v5
+        with:
+          path: .scholar-ok
+          key: ${{ steps.week.outputs.key }}
+          lookup-only: true
 
       - name: Fetch numbers from Google Scholar
-        run: python3 scripts/update_scholar.py
+        id: fetch
+        if: github.event_name == 'workflow_dispatch' || steps.done.outputs.cache-hit != 'true'
+        run: |
+          rc=0
+          python3 scripts/update_scholar.py || rc=$?
+          if [ "$rc" -eq 0 ]; then
+            echo "status=ok" >> "$GITHUB_OUTPUT"
+          elif [ "$rc" -eq 75 ]; then   # Scholar refused this runner's IP address
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              echo "::error::Google Scholar blocked this runner. Run it again later, or locally: python3 scripts/update_scholar.py, then commit and push index.html."
+              exit 1
+            elif [ "$(date -u +%u)" -eq 7 ]; then
+              echo "::error::Google Scholar blocked every run this week. Update locally: python3 scripts/update_scholar.py, then commit and push index.html."
+              exit 1
+            fi
+            echo "::warning::Google Scholar blocked this runner; trying again tomorrow."
+          else
+            exit "$rc"                  # page layout changed or numbers look wrong
+          fi
 
       - name: Commit and publish if anything changed
+        if: steps.fetch.outputs.status == 'ok'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -37,3 +73,14 @@ jobs:
           # Pushes made with GITHUB_TOKEN may not trigger a Pages build on their own
           gh api -X POST "repos/${{ github.repository }}/pages/builds" > /dev/null \
             || echo "::warning::Could not request a Pages build."
+
+      - name: Write this week's marker
+        if: steps.fetch.outputs.status == 'ok' && steps.done.outputs.cache-hit != 'true'
+        run: date -u > .scholar-ok
+
+      - name: Save this week's marker
+        if: steps.fetch.outputs.status == 'ok' && steps.done.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v5
+        with:
+          path: .scholar-ok
+          key: ${{ steps.week.outputs.key }}

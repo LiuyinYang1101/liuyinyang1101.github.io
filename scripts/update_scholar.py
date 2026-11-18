@@ -13,7 +13,11 @@ are not on the page are reported but never added: that needs a human (venue,
 links, description).
 
 Usage:  python3 scripts/update_scholar.py [--dry-run] [--force]
-Exit 1 if Scholar could not be read (e.g. CAPTCHA); index.html is untouched.
+Exit codes (index.html is untouched unless the exit code is 0):
+  75  Scholar refused the request (HTTP 403/429, CAPTCHA). This depends on the
+      caller's IP address: cloud runners are blocked now and then, so the
+      workflow treats it as "try again tomorrow", not as a failure.
+  1   the page was read but looks wrong (layout change, implausible numbers).
 """
 import datetime
 import html
@@ -29,6 +33,7 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/128.0 Safari/537.36")
 INDEX = pathlib.Path(__file__).resolve().parent.parent / "index.html"
 MAX_DROP = 0.2  # refuse a >20% fall in total citations unless --force (likely a bad parse)
+EXIT_BLOCKED = 75  # EX_TEMPFAIL
 
 
 def fetch(retries=3):
@@ -44,7 +49,8 @@ def fetch(retries=3):
             print(f"attempt {attempt}: {e}", file=sys.stderr)
         if attempt < retries:
             time.sleep(30 * attempt)
-    sys.exit("Could not read the Google Scholar profile; index.html left unchanged.")
+    print("Could not read the Google Scholar profile; index.html left unchanged.", file=sys.stderr)
+    sys.exit(EXIT_BLOCKED)
 
 
 def parse(page):
